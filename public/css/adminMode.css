@@ -1,0 +1,474 @@
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+:root {
+  --dark: #0f1013;
+  --white: #fff;
+  --grey: #f5f5f5;
+  --black1: #222;
+  --black2: #999;
+}
+
+body {
+  min-height: 100vh;
+  overflow-x: hidden;
+  font-family: "Montserrat";
+}
+
+.container {
+  position: relative;
+  width: 100%;
+}
+
+.navigation {
+  position: fixed;
+  width: 300px;
+  height: 100%;
+  background: var(--dark);
+  border-left: 10px solid var(--dark);
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+  overflow: hidden;
+}
+
+.navigation ul {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+}
+
+.navigation ul li {
+  position: relative;
+  width: 100%;
+  list-style: none;
+  border-top-left-radius: 30px;
+  border-bottom-left-radius: 30px;
+}
+
+.navigation ul li a {
+  position: relative;
+  display: block;
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  text-decoration: none;
+  color: var(--white);
+}
+
+.navigation ul li a .title {
+  position: relative;
+  padding: 0 10px;
+  text-align: center;
+  white-space: nowrap;
+}
+
+.navigation ul li a .icon {
+  position: relative;
+  min-width: 60px;
+  height: 60px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin-left: 20px;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  list-style: 60px;
+  text-align: center;
+}
+
+.navigation ul li a .icon ion-icon {
+  font-size: 1.75em;
+}
+
+.navigation ul li:hover,
+.navigation ul .hovered {
+  background: var(--white);
+}
+
+.navigation ul li:hover a,
+.navigation ul .hovered a {
+  color: var(--dark);
+}
+
+.navigation ul li:hover a::before,
+.navigation ul .hovered a::before {
+  content: "";
+  position: absolute;
+  right: 0;
+  top: -50px;
+  width: 50px;
+  height: 50px;
+  background: transparent;
+  border-radius: 50%;
+  -webkit-box-shadow: 35px 35px 0 10px var(--white);
+          box-shadow: 35px 35px 0 10px var(--white);
+  pointer-events: none;
+}
+
+.navigation ul li:hover a::after,
+.navigation ul .hovered a::after {
+  content: "";
+  position: absolute;
+  right: 0;
+  bottom: -50px;
+  width: 50px;
+  height: 50px;
+  background: transparent;
+  border-radius: 50%;
+  -webkit-box-shadow: 35px -35px 0 10px var(--white);
+          box-shadow: 35px -35px 0 10px var(--white);
+  pointer-events: none;
+}
+
+.navigation ul li:nth-child(1) {
+  margin-top: 10px;
+  margin-bottom: 130px;
+}
+
+.navigation.active {
+  width: 80px;
+}
+
+.main {
+  position: absolute;
+  width: calc(100% - 300px);
+  left: 300px;
+  min-height: 100vh;
+  background: var(--white);
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+}
+
+.main .topbar {
+  width: 100%;
+  height: 60px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 0 10px;
+}
+
+.main .toggle {
+  position: relative;
+  top: 0;
+  width: 60px;
+  height: 60px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  font-size: 2.5em;
+  cursor: pointer;
+}
+
+.main .research {
+  position: relative;
+  width: 400px;
+  margin: 0 10px;
+}
+
+.main .research label {
+  position: relative;
+  width: 100%;
+}
+
+.main .research label input {
+  width: 100%;
+  height: 40px;
+  border-radius: 40px;
+  padding: 5px 20px;
+  padding-left: 35px;
+  font-size: 18px;
+  outline: none;
+  border: 1px solid var(--black2);
+}
+
+.main .research label ion-icon {
+  position: absolute;
+  top: 0;
+  left: 10px;
+  font-size: 1.2em;
+}
+
+.main .user {
+  position: relative;
+  min-width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.main .user img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.main .cardBox {
+  position: relative;
+  width: 100%;
+  padding: 20px;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (1fr)[4];
+      grid-template-columns: repeat(4, 1fr);
+  grid-gap: 30px;
+}
+
+.main .cardBox .card {
+  position: relative;
+  background: var(--white);
+  padding: 30px;
+  border-radius: 20px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  cursor: pointer;
+  -webkit-box-shadow: 0 7px 25px rgba(0, 0, 0, 0.08);
+          box-shadow: 0 7px 25px rgba(0, 0, 0, 0.08);
+}
+
+.main .cardBox .card .numbers {
+  position: relative;
+  font-weight: 500;
+  font-size: 2.5em;
+  color: var(--dark);
+}
+
+.main .cardBox .card .cardName {
+  color: var(--black2);
+  font-size: 1.1em;
+  margin-top: 5px;
+}
+
+.main .cardBox .card .iconBx {
+  font-size: 3.5em;
+  color: var(--black2);
+}
+
+.main .cardBox .card:hover {
+  background: var(--dark);
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+}
+
+.main .cardBox .card:hover .numbers,
+.main .cardBox .card:hover .iconBx,
+.main .cardBox .card:hover .cardName {
+  color: var(--white);
+}
+
+.main .detail,
+.main .dash {
+  position: relative;
+  width: 100%;
+  padding-top: 50px;
+  padding-left: 80px;
+  padding-right: 80px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.main .detail .recentOrders,
+.main .dash .recentOrders {
+  position: relative;
+  display: -ms-grid;
+  display: grid;
+  min-height: 500px;
+  width: 100%;
+  background: var(--white);
+  padding: 20px;
+  -webkit-box-shadow: 0 7px 25px rgba(0, 0, 0, 0.08);
+          box-shadow: 0 7px 25px rgba(0, 0, 0, 0.08);
+  border-radius: 20px;
+}
+
+.main .detail .recentOrders .cardHeader,
+.main .dash .recentOrders .cardHeader {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+}
+
+.main .detail .recentOrders .cardHeader h2,
+.main .dash .recentOrders .cardHeader h2 {
+  font-weight: 600;
+  color: var(--dark);
+}
+
+.main .detail .recentOrders .cardHeader .btn,
+.main .dash .recentOrders .cardHeader .btn {
+  position: relative;
+  padding: 5px 10px;
+  background: var(--dark);
+  text-decoration: none;
+  color: var(--white);
+  border-radius: 6px;
+}
+
+.main .detail .recentOrders table,
+.main .dash .recentOrders table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 10px;
+}
+
+.main .detail .recentOrders table thead td,
+.main .dash .recentOrders table thead td {
+  font-weight: 600;
+}
+
+.main .detail .recentOrders table tr,
+.main .dash .recentOrders table tr {
+  color: var(--black1);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.main .detail .recentOrders table tr td,
+.main .dash .recentOrders table tr td {
+  padding: 10px;
+}
+
+.main .detail .recentOrders table tr td:last-child,
+.main .dash .recentOrders table tr td:last-child {
+  text-align: end;
+}
+
+.main .detail .recentOrders table tr td:nth-child(2),
+.main .dash .recentOrders table tr td:nth-child(2) {
+  text-align: end;
+}
+
+.main .detail .recentOrders table tr td:nth-child(3),
+.main .dash .recentOrders table tr td:nth-child(3) {
+  text-align: center;
+}
+
+.main .detail .recentOrders table tr:last-child,
+.main .dash .recentOrders table tr:last-child {
+  border-bottom: none;
+}
+
+.main .detail .recentOrders table tbody tr td .status,
+.main .dash .recentOrders table tbody tr td .status {
+  padding: 2px 4px;
+  background: #8de02c;
+  color: var(--white);
+  border-radius: 4px;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.main .detail .recentOrders table tbody tr:hover,
+.main .dash .recentOrders table tbody tr:hover {
+  background: var(--dark);
+  color: var(--white);
+}
+
+.main .dash.activate {
+  display: block;
+}
+
+.main.active {
+  width: calc(100% - 80px);
+  left: 80px;
+}
+
+@media (max-width: 990px) {
+  .navigation {
+    left: -300px;
+  }
+  .navigation.active {
+    width: 300px;
+    left: 0;
+  }
+  .main {
+    width: 100%;
+    left: 0;
+  }
+  .main .cardBox {
+    -ms-grid-columns: (1fr)[2];
+        grid-template-columns: repeat(2, 1fr);
+  }
+  .main.active {
+    left: 300px;
+  }
+}
+
+@media (max-width: 768px) {
+  .main .cardBox {
+    -ms-grid-columns: (1fr)[4];
+        grid-template-columns: repeat(4, 1fr);
+    overflow-x: scroll;
+    -ms-scroll-snap-type: mandatory;
+        scroll-snap-type: mandatory;
+  }
+  .main ::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+@media (max-width: 450px) {
+  .cardHeader h2 {
+    font-size: 20px;
+  }
+  .user {
+    min-width: 40px;
+  }
+  .navigation {
+    width: 100%;
+    left: -100%;
+    z-index: 1000;
+  }
+  .navigation.active {
+    width: 100%;
+    left: 0;
+  }
+  .main.active .toggle {
+    left: 60px;
+    color: var(--white);
+  }
+  .toggle {
+    z-index: 10001;
+  }
+}
+/*# sourceMappingURL=adminMode.css.map */

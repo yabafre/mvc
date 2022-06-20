@@ -1,0 +1,238 @@
+*,
+::before,
+::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: "Montserrat", Arial, Helvetica, sans-serif;
+}
+
+header {
+  position: absolute;
+  width: 100%;
+  top: 0;
+  left: 0;
+  background-color: rgba(255, 255, 255, 0);
+}
+header.scrolled{
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 10;
+  transition: 0.7s;
+  background-color: rgba(255, 255, 255, 0.152);
+  box-shadow: 0 5px 20px 0.1px rgba(121, 115, 115, 0.459);
+  backdrop-filter: blur(29px);
+}
+
+button {
+  background: none;
+  border: 1px solid #8d8d8e;
+  box-sizing: border-box;
+  border-radius: 99px;
+}
+
+span {
+  font-weight: 600;
+}
+
+nav {
+  display: flex;
+  align-items: center;
+  justify-content:space-between;
+  padding: 15px 25px;
+  margin: 0 70px 0 70px;
+  
+}
+.wall {
+  display: flex;
+  justify-content: center;
+  background-color: #3C6CA9;
+}
+.wall video {
+  width: 82%;
+  padding-top: 50px;
+}
+
+.search {
+  display: flex;
+  align-items: center;
+  background: #f3f3f345;
+  backdrop-filter: blur(29px);
+  border-radius: 10px;
+  width: 557px;
+  height: 40px;
+}
+
+.search img {
+  margin: 24px;
+}
+.search input {
+  width: 86%;
+  height: 30px;
+  background: none;
+  border: none;
+  outline:#0c0c0d9d;
+}
+.nav-icon img {
+  width: 120px;
+}
+
+.navlinks-container a, .sign-btns {
+  display: none;
+}
+.sign-user img, .hamburger{
+    width: 30px;
+}
+.nav-list button{
+    background-color: inherit;
+    border: inherit;
+    outline: inherit;
+}
+
+.nav-list{
+    width: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-right: 20px;
+}
+
+
+footer {
+    background: #0c0c0d;
+    display: flex;
+    flex-direction: column;
+    padding:0 70px 0 70px ;
+    color: white;
+    overflow-x:auto;
+  }
+.wro{
+  display: flex;
+  width: 100%;
+  justify-content: space-around;
+  padding: 70px 250px 15px 250px;
+}
+.wro a{
+  text-decoration: none;
+  text-transform: uppercase;
+  color: aliceblue;
+}
+
+.contact{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding:30px 70px 0 70px ;
+}
+.incontact {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.fram2{
+  margin-top: 95px;
+}
+.sav .social nav{
+  padding-left: 0;
+  margin: 0;
+}
+.sav .social nav ul{
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  list-style: none;
+}
+.sav .social nav ul li{
+  margin-left: 50px;
+}
+.fram2 button {
+  display: flex;
+  align-items: center;
+  padding: 8px 16px 8px 12px;
+  background-color: #ffffff;
+}
+.fram2 img {
+  padding-right: 13px;
+}
+
+.e-mail {
+  font-size: 12px;
+  font-weight: 600;
+  margin-top: 50px;
+  margin-bottom: 20px;
+}
+
+.mail {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  background-color: #ffffff;
+  height: 48px;
+  border-radius: 10px 10px;
+}
+
+.mail input {
+  width: 402px;
+  height: 48px;
+  border: none;
+  border-radius: 10px;
+  background: #f3f3f3;
+}
+
+.mail button {
+  padding: 11px 30px 11px 16px;
+  border: none;
+  border-radius: 0px 10px 10px 0px;
+  font-weight: 600;
+  font-size: 20px;
+}
+.mail button:hover {
+  background-color: #f3f3f3;
+}
+.mail span {
+  font-weight: 600;
+  font-size: 20px;
+}
+
+.mention {
+  display: flex;
+  justify-content: space-evenly;
+  height: 50px;
+  align-self: center;
+  margin: 50px 80px 20px 80px;
+  width: 70%;
+  background: #232326;
+  border-radius: 10px;
+  padding: 16px 64px;
+}
+
+.mention a {
+  font-weight: 600;
+  font-size: 16px;
+  margin-bottom: 0;
+  color: #ffffff;
+  text-align: center;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+
+@media (max-width: 900px) {
+  nav {
+    padding: 15px 20px;
+    position: relative;
+  }
+
+  .nav-icon {
+    order: 2;
+    margin: 0 auto;
+  }
+
+  .nav-icon span {
+    font-size: 22px;
+  }
+
+  .main-navlinks {
+    order: 1;
+  }
+}

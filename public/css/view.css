@@ -1,0 +1,30 @@
+.categorie ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  padding: 20px 80px 20px 80px;
+  list-style: none;
+}
+
+.categorie ul li {
+  height: 100%;
+  border-radius: 30%;
+  -webkit-filter: saturate(0);
+          filter: saturate(0);
+  cursor: pointer;
+}
+
+.categorie ul li img {
+  width: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.categorie ul li:hover {
+  -webkit-filter: none;
+          filter: none;
+}
+/*# sourceMappingURL=view.css.map */
