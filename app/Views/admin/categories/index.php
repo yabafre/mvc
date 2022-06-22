@@ -1,15 +1,11 @@
 <div class="dash categories">
             <div class="recentOrders">
                 <div class="cardHeader">
-                    <h2> Recent Orders</h2>
-                    <a href="#" class="btn"> View All</a>
+                    <h1> Administrer les catégories</h1>
+                    <a href="?p=admin.categories.add" class="btn"> Ajouter</a>
                 </div>
                 
-                <h1>Administrer les catégories</h1>
                 
-                <p>
-                    <a href="?p=admin.categories.add" class="btn btn-success">Ajouter</a>
-                </p>
                 
                 <table class="table">
                     <thead>

@@ -9,12 +9,16 @@ class PostsController extends AppController{
 
     public function __construct(){
         parent::__construct();
+        $this->loadModel('User');
+        $this->loadModel('Produit');
         $this->loadModel('Post');
     }
 
     public function index(){
+        $users = $this->User->all();
         $posts = $this->Post->all();
-        $this->render('admin.posts.index', compact('posts'));
+        $produits = $this->Produit->all();
+        $this->render('admin.posts.index', compact('posts','users','produits'));
     }
 
     public function add(){
@@ -29,9 +33,11 @@ class PostsController extends AppController{
             }
         }
         $this->loadModel('Category');
+        $users = $this->User->all();
+        $produits = $this->Produit->all();
         $categories = $this->Category->extract('id', 'titre');
         $form = new BootstrapForm($_POST);
-        $this->render('admin.posts.edit', compact('categories', 'form'));
+        $this->render('admin.posts.edit', compact('categories', 'form','users','produits'));
     }
 
     public function edit(){
@@ -47,9 +53,11 @@ class PostsController extends AppController{
         }
         $post = $this->Post->find($_GET['id']);
         $this->loadModel('Category');
+        $users = $this->User->all();
+        $produits = $this->Produit->all();
         $categories = $this->Category->extract('id', 'titre');
         $form = new BootstrapForm($post);
-        $this->render('admin.posts.edit', compact('categories', 'form'));
+        $this->render('admin.posts.edit', compact('categories', 'form','users','produits'));
     }
 
     public function delete(){

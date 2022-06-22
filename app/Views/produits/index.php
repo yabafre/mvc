@@ -7,20 +7,25 @@
     <div id="categorie" class="categorie linked-select" data_target="produit" data_source="/app/Views/produits/">
         <ul>
             <?php foreach ($categories as $categorie): ?>
-                <li id="<?=$categorie->id?>" class="<?= $categorie->titre; ?>"><a href="index.php?categorie=<?=$categorie->id?>"><img src="../public/asset/produits/<?= $categorie->img; ?>"></a></li>
+                <li id="<?=$categorie->id?>" class="<?= $categorie->titre; ?>"><a href="index.php?categorie=<?=$categorie->id?>&#categorie"><img src="../public/asset/produits/<?= $categorie->img; ?>"></a></li>
             <?php endforeach; ?>
         </ul>
     </div>
     <div id="produit" class="produits linked-select" data_target="article">
+            <div class="view">
                 <?php if (isset($_GET["categorie"])){?>
                      <?php foreach ($produits as $produit): ?>
-                        <div>
-                             <p><h1><?= $produit->titre; ?></h1>
-                             <img src="../public/asset/produits<?= $produit->img; ?>" alt="produit" style='width:23%;'>
+                        <div class="element">
+                             <!-- <p><h1><?= $produit->titre; ?></h1> -->
+                             <img src="../public/asset/produits<?= $produit->img; ?>" alt="produit" style='width:100%;'>
                              </p>
                          </div>
                      <?php endforeach; ?>
                <?php }?>
+            </div>
+            <div class="board">
+                ggg
+            </div>
     </div>
 
     <!-- <div id="article" class="article linked-select" data_target="">

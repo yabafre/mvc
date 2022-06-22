@@ -21,8 +21,11 @@ class Controller{
     }
 
     protected function notFound(){
-       $this->render(posts.erreur);
+       $this->render('posts.erreur');
        die();
     }
 
+    
+
 }
+

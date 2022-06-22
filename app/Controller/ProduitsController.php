@@ -36,7 +36,7 @@ class ProduitsController extends AppController{
         }
         $produits = $this->Post->lastByCategory($_GET['id']);
         $categories = $this->Category->all();
-        $this->render('posts.c²ategory', compact('produits', 'categories', 'categorie'));
+        $this->render('posts.category', compact('produits', 'categories', 'categorie'));
     }
 
     public function show(){

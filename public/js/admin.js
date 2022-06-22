@@ -35,3 +35,15 @@ option.forEach((item, i) => {
     dash[i].classList.add("activate");
   });
 });
+
+//counter view
+
+const counter = document.getElementById("counter");
+
+const updateCounter = async () => {
+  const data = await fetch("https://api.countapi.xyz/hit/mvc/visite");
+  const count = await data.json();
+  counter.innerHTML = count.value;
+};
+
+updateCounter();

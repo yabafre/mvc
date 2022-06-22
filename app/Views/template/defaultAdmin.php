@@ -66,13 +66,6 @@
             <div class="toggle">
             <ion-icon name="menu-outline"></ion-icon>
             </div>
-            <!-- search -->
-            <div class="research">
-                <label>
-                    <input type="text" placeholder="search here">
-                    <ion-icon name="search-outline"></ion-icon>
-                </label>
-            </div>
             <!-- userimg -->
             <div class="user">
                 <img src="../public/asset/img/user.jpg" alt="user">
@@ -82,7 +75,8 @@
         <div class="cardBox">
             <div class="card">
                 <div>
-                    <div class="numbers">1,504</div>
+           
+                    <div id="counter" class="numbers">0</div>
                     <div class="cardName">Daily views</div>
                 </div>
                 <div class="iconBx">
@@ -91,7 +85,7 @@
             </div>
             <div class="card">
                 <div>
-                    <div class="numbers">80</div>
+                    <div class="numbers"><?=count($users)?></div>
                     <div class="cardName">yuser</div>
                 </div>
                 <div class="iconBx">
@@ -100,7 +94,7 @@
             </div>
             <div class="card">
                 <div>
-                    <div class="numbers">284</div>
+                    <div class="numbers"><?=count($produits)?></div>
                     <div class="cardName">nb produit</div>
                 </div>
                 <div class="iconBx">

@@ -1,11 +1,11 @@
 <div class="dash users">
             <div class="recentOrders">
                 <div class="cardHeader">
-                    <h2> Recent users</h2>
-                    <a href="#" class="btn"> View All</a>
+                    <h1>Administrer les Yusers </h1>
+                    <a href="?p=admin.users.add" class="btn"> Ajouter</a>
                 </div>
                 
-                <h1>Administrer les Yusers</h1>
+                <h2>Recent yusers</h2>
                 
                 <table class="table">
     <thead>

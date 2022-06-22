@@ -25,9 +25,10 @@ class DBAuth {
      */
     public function login($email, $password){
         $user = $this->db->prepare('SELECT * FROM users WHERE email = ?', [$email], null, true);
-        var_dump(sha1($password));
+        var_dump(password_hash($password, PASSWORD_DEFAULT));
         if($user){
-            if($user->password === sha1($password)){
+          //  if($user->password === password_hash($password, PASSWORD_DEFAULT)){
+            if(password_verify($password,$user->password )){
                 $_SESSION['auth'] = $user->id;
                 $_SESSION['user'] = $user;
                 return true;

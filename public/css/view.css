@@ -2,10 +2,11 @@
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   padding: 20px 80px 20px 80px;
+  text-align: center;
   list-style: none;
 }
 
@@ -18,7 +19,7 @@
 }
 
 .categorie ul li img {
-  width: 100%;
+  width: 60%;
   -o-object-fit: cover;
      object-fit: cover;
 }
@@ -26,5 +27,52 @@
 .categorie ul li:hover {
   -webkit-filter: none;
           filter: none;
+}
+
+.produits {
+  display: -ms-grid;
+  display: grid;
+      grid-template-areas: "a a a b";
+  -ms-grid-columns: (1fr)[4];
+      grid-template-columns: repeat(4, 1fr);
+  position: relative;
+  z-index: 1;
+  height: 447px;
+  overflow: hidden;
+}
+
+.produits .view {
+  -ms-grid-row: 1;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 3;
+  grid-area: a;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (1fr)[3];
+      grid-template-columns: repeat(3, 1fr);
+}
+
+.produits .view .element {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.produits .board {
+  -ms-grid-row: 1;
+  -ms-grid-column: 4;
+  grid-area: b;
+  position: -webkit-sticky;
+  position: sticky;
+  left: 61.32%;
+  top: 49.05%;
+  bottom: 38.13%;
+  background: rgba(52, 55, 60, 0.82);
+  -webkit-box-shadow: -19px 14px 14px rgba(0, 0, 0, 0.25);
+          box-shadow: -19px 14px 14px rgba(0, 0, 0, 0.25);
+  border-radius: 20px 0px 0px 20px;
 }
 /*# sourceMappingURL=view.css.map */

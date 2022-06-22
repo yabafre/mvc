@@ -9,12 +9,14 @@ class UsersController extends AppController{
     public function __construct(){
         parent::__construct();
         $this->loadModel('User');
+        $this->loadModel('Produit');
     }
 
     public function index(){
         $users = $this->User->all();
+        $produits = $this->Produit->all();
         $form = new BootstrapForm($_POST);
-        $this->render('admin.users.index', compact('users', 'form'));
+        $this->render('admin.users.index', compact('users', 'form','produits'));
     }
 
     public function add(){
@@ -34,7 +36,7 @@ class UsersController extends AppController{
             }
         }
         $form = new BootstrapForm($_POST);
-        $this->render('admin.users.add', compact('users', 'form'));
+        $this->render('admin.users.add', compact('users', 'form','produits'));
     }
 
     public function edit(){
@@ -54,7 +56,7 @@ class UsersController extends AppController{
             }
         }
         $form = new BootstrapForm($users);
-        $this->render('admin.users.edit', compact('users', 'form'));
+        $this->render('admin.users.edit', compact('users', 'form','produits'));
     }
 
     public function delete(){
@@ -91,7 +93,7 @@ class UsersController extends AppController{
             }
         }
         $form = new BootstrapForm($_POST);
-        $this->render('users.inscription ', compact('form', 'errors', 'messageError'));
+        $this->render('users.inscription ', compact('form', 'errors', 'messageError','produits',));
     }
 
     public function registration($donnees){

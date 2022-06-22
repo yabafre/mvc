@@ -8,6 +8,7 @@ class ProduitsController extends AppController{
 
     public function __construct(){
         parent::__construct();
+        $this->loadModel('User');
         $this->loadModel('Produit');
     }
 
@@ -17,7 +18,8 @@ class ProduitsController extends AppController{
         }
 
         $produits = $this->Produit->all();
-        $this->render('admin.produits.index', compact('produits'));
+        $users = $this->User->all();
+        $this->render('admin.produits.index', compact('produits','users'));
     }
 
     public function add(){
@@ -41,9 +43,11 @@ class ProduitsController extends AppController{
             }
         }
         $this->loadModel('Category');
+        $users = $this->User->all();
+        $produits = $this->Produit->all();
         $categories = $this->Category->extract('id', 'titre');
         $form = new BootstrapForm($_POST);
-        $this->render('admin.produits.edit', compact('categories', 'form'));
+        $this->render('admin.produits.edit', compact('categories', 'form','users', 'produits'));
     }
 
     public function edit(){
@@ -71,10 +75,11 @@ class ProduitsController extends AppController{
         }
         
         $this->loadModel('Category');
+        $users = $this->User->all();
+        $produits = $this->Produit->all();
         $categories = $this->Category->extract('id', 'titre');
-        var_dump($categories);
         $form = new BootstrapForm($produit);
-        $this->render('admin.produits.edit', compact('categories', 'form'));
+        $this->render('admin.produits.edit', compact('categories', 'form','users', 'produits'));
     }
 
     public function delete(){

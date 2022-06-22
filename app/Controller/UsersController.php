@@ -85,7 +85,7 @@ class UsersController extends AppController {
                 'firstname' => $_POST['firstname'],
                 'lastname' => $_POST['lastname'],
                 'tel' => $_POST['tel'],
-                'password' => sha1($_POST['password']),
+                'password' => password_hash($_POST['password'], PASSWORD_DEFAULT),
                 'role' => 'ROLE_USER',
             ]);
             if($result){
@@ -93,5 +93,4 @@ class UsersController extends AppController {
             }
         }
     }
-
 }

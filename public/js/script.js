@@ -8,11 +8,20 @@ document.getElementById("current_date").innerHTML = year;
 
 /* --------- Sticky Navbar --------- */
 
-function stickyNavbar(){
-    if(window.scrollY > 300){
-        header.classList.add("scrolled")
-    }else{
-        header.classList.remove("scrolled")
-    }
+function stickyNavbar() {
+  if (window.scrollY > 300) {
+    header.classList.add("scrolled");
+  } else {
+    header.classList.remove("scrolled");
+  }
 }
 window.addEventListener("scroll", stickyNavbar);
+
+/* --------- Scrolling check --------- */
+
+if (document.location.toString().match("#categorie")) {
+  $("html, body").animate(
+    { scrollTop: $("#categorie").offset().top - 1000 },
+    speed
+  );
+}

@@ -45,4 +45,6 @@ class PostTable extends Table{
             LEFT JOIN categories ON category_id = categories.id
             WHERE articles.id = ?", [$id], true);
     }
+
+
 }

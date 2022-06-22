@@ -72,6 +72,7 @@
               <input type="submit" value="Inscription" class="sign-btn" />
             </div>
           </form>
+
         </div>
         
         <div class="carousel">

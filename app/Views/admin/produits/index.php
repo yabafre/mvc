@@ -1,16 +1,12 @@
 <div class="dash produits">
             <div class="recentOrders">
                 <div class="cardHeader">
-                    <h2> Produits</h2>
-                    <a href="#" class="btn"> View All</a>
+                    <h2> Administrer les produits</h2>
+                    <a href="?p=admin.produits.add" class="btn"> Ajouter</a>
                 </div>
               
                 <h1>Administrer les produits</h1>
-                
-                <p>
-                    <a href="?p=admin.produits.add" class="btn btn-success">Ajouter</a>
-                </p>
-                
+                                
                 <table class="table">
                     <thead>
                     <tr>
@@ -22,7 +18,7 @@
                         <td>Actions</td>
                     </tr>
                     </thead>
-                    <tbody>
+                    <tbody></tbody>
                         <?php foreach($produits as $produit): ?>
                         <tr>
                             <td><?= $produit->id; ?></td>

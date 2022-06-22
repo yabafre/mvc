@@ -9,12 +9,16 @@ class CategoriesController extends AppController{
 
     public function __construct(){
         parent::__construct();
+        $this->loadModel('User');
+        $this->loadModel('Produit');
         $this->loadModel('Category');
     }
 
     public function index(){
+        $users = $this->User->all();
+        $produits = $this->Produit->all();
         $items = $this->Category->all();
-        $this->render('admin.categories.index', compact('items'));
+        $this->render('admin.categories.index', compact('items','users','produits'));
     }
 
     public function add(){
@@ -28,8 +32,10 @@ class CategoriesController extends AppController{
             ]);
             return $this->index();
         }
+        $users = $this->User->all();
+        $produits = $this->Produit->all();
         $form = new BootstrapForm($_POST);
-        $this->render('admin.categories.edit', compact('form'));
+        $this->render('admin.categories.edit', compact('form','users','produits'));
     }
 
     public function edit(){
@@ -44,8 +50,10 @@ class CategoriesController extends AppController{
             ]);
             return $this->index();
         }
+        $users = $this->User->all();
+        $produits = $this->Produit->all();
         $form = new BootstrapForm($category);
-        $this->render('admin.categories.edit', compact('form'));
+        $this->render('admin.categories.edit', compact('form','users','produits'));
     }
 
     public function delete(){
