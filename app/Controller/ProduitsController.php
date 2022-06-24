@@ -22,10 +22,11 @@ class ProduitsController extends AppController{
             $this->notFound();
         }
             $produits = $this->Produit->lastByCategory($_GET["categorie"]);
+            
        } 
         $categories = $this->Category->all();
-        
-        $this->render('produits.index', compact('produits', 'categories'));
+        $last = $this->Produit->last();
+        $this->render('produits.index', compact('produits', 'categories', 'last'));
     }
     
 

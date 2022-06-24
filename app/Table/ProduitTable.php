@@ -17,7 +17,7 @@ class ProduitTable extends Table{
             FROM produits
             LEFT JOIN categories ON category_id = categories.id
             LEFT JOIN sous_categories ON sous_category_id = sous_categories.id
-            ORDER BY produits.id DESC LIMIT 3");
+            ORDER BY produits.id DESC LIMIT 6");
             
     }
 

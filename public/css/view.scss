@@ -1,52 +1,61 @@
-.categorie {
-  ul {
-    display: flex;
-    justify-content: center;
-    padding: 20px 80px 20px 80px;
-    text-align: center;
-    list-style: none;
-    li {
-      height: 100%;
-      border-radius: 30%;
-      filter: saturate(0);
-      cursor: pointer;
-      img {
-        width: 60%;
-        object-fit: cover;
-      }
-    }
-    li:hover {
-      filter: none;
-    }
-  }
-}
-
-.produits {
-  display: grid;
-  grid-template-areas: "a a a b";
-  grid-template-columns: repeat(4, 1fr);
-  position: relative;
-    z-index: 1;
-    height: 447px;
-    overflow: hidden;
-  .view {
-    grid-area: a;
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    .element {
+.post {
+  padding-left: 70px;
+  .categorie {
+    ul {
       display: flex;
       justify-content: center;
+      padding: 20px 80px 20px 80px;
+      text-align: center;
+      list-style: none;
+      li {
+        height: 100%;
+        border-radius: 30%;
+        filter: saturate(0);
+        cursor: pointer;
+        img {
+          width: 60%;
+          object-fit: cover;
+        }
+      }
+      li:hover {
+        filter: none;
+      }
     }
   }
-  .board {
-    grid-area: b;
-    position: sticky;
-    left: 61.32%;
-    top: 49.05%;
-    bottom: 38.13%;
 
-    background: rgba(52, 55, 60, 0.82);
-    box-shadow: -19px 14px 14px rgba(0, 0, 0, 0.25);
-    border-radius: 20px 0px 0px 20px;
+  .view {
+    display: grid;
+    grid-template-areas: "a a a b";
+    grid-template-columns: repeat(4, 1fr);
+    grid-column-gap: 24px;
+    height: fit-content;
+    z-index: 1;
+    .produit {
+      grid-area: a;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      height: fit-content;
+      .element {
+        margin: 0;
+        display: flex;
+        justify-content: center;
+      }
+      h1 {
+        position: absolute;
+        left: 20px;
+      }
+    }
+    .board {
+      grid-area: b;
+      position: sticky;
+      top: 110px;
+      bottom: 30px;
+      z-index: -1;
+      width: 380px;
+      height: 600px;
+      background: rgba(13, 13, 14, 0.82);
+      box-shadow: -19px 14px 14px rgba(0, 0, 0, 0.25);
+      border-radius: 20px 0px 0px 20px;
+    }
   }
 }

@@ -1,4 +1,8 @@
-.categorie ul {
+.post {
+  padding-left: 70px;
+}
+
+.post .categorie ul {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -10,7 +14,7 @@
   list-style: none;
 }
 
-.categorie ul li {
+.post .categorie ul li {
   height: 100%;
   border-radius: 30%;
   -webkit-filter: saturate(0);
@@ -18,30 +22,31 @@
   cursor: pointer;
 }
 
-.categorie ul li img {
+.post .categorie ul li img {
   width: 60%;
   -o-object-fit: cover;
      object-fit: cover;
 }
 
-.categorie ul li:hover {
+.post .categorie ul li:hover {
   -webkit-filter: none;
           filter: none;
 }
 
-.produits {
+.post .view {
   display: -ms-grid;
   display: grid;
       grid-template-areas: "a a a b";
   -ms-grid-columns: (1fr)[4];
       grid-template-columns: repeat(4, 1fr);
-  position: relative;
+  grid-column-gap: 24px;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
   z-index: 1;
-  height: 447px;
-  overflow: hidden;
 }
 
-.produits .view {
+.post .view .produit {
   -ms-grid-row: 1;
   -ms-grid-column: 1;
   -ms-grid-column-span: 3;
@@ -50,9 +55,13 @@
   display: grid;
   -ms-grid-columns: (1fr)[3];
       grid-template-columns: repeat(3, 1fr);
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
 }
 
-.produits .view .element {
+.post .view .produit .element {
+  margin: 0;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -61,16 +70,23 @@
           justify-content: center;
 }
 
-.produits .board {
+.post .view .produit h1 {
+  position: absolute;
+  left: 20px;
+}
+
+.post .view .board {
   -ms-grid-row: 1;
   -ms-grid-column: 4;
   grid-area: b;
   position: -webkit-sticky;
   position: sticky;
-  left: 61.32%;
-  top: 49.05%;
-  bottom: 38.13%;
-  background: rgba(52, 55, 60, 0.82);
+  top: 110px;
+  bottom: 30px;
+  z-index: -1;
+  width: 380px;
+  height: 600px;
+  background: rgba(13, 13, 14, 0.82);
   -webkit-box-shadow: -19px 14px 14px rgba(0, 0, 0, 0.25);
           box-shadow: -19px 14px 14px rgba(0, 0, 0, 0.25);
   border-radius: 20px 0px 0px 20px;

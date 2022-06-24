@@ -11,8 +11,8 @@
             <?php endforeach; ?>
         </ul>
     </div>
-    <div id="produit" class="produits linked-select" data_target="article">
-            <div class="view">
+    <div id="view" class="view linked-select" data_target="article">
+            <div class="produit">
                 <?php if (isset($_GET["categorie"])){?>
                      <?php foreach ($produits as $produit): ?>
                         <div class="element">
@@ -20,17 +20,49 @@
                              <img src="../public/asset/produits<?= $produit->img; ?>" alt="produit" style='width:100%;'>
                              </p>
                          </div>
+                         <div class="element">
+                             <!-- <p><h1><?= $produit->titre; ?></h1> -->
+                             <img src="../public/asset/produits<?= $produit->img; ?>" alt="produit" style='width:100%;'>
+                             </p>
+                         </div>
+                         <div class="element">
+                             <!-- <p><h1><?= $produit->titre; ?></h1> -->
+                             <img src="../public/asset/produits<?= $produit->img; ?>" alt="produit" style='width:100%;'>
+                             </p>
+                         </div>
+                         <div class="element">
+                             <!-- <p><h1><?= $produit->titre; ?></h1> -->
+                             <img src="../public/asset/produits<?= $produit->img; ?>" alt="produit" style='width:100%;'>
+                             </p>
+                         </div>
+                         <div class="element">
+                             <!-- <p><h1><?= $produit->titre; ?></h1> -->
+                             <img src="../public/asset/produits<?= $produit->img; ?>" alt="produit" style='width:100%;'>
+                             </p>
+                         </div>
+                         <div class="element">
+                             <!-- <p><h1><?= $produit->titre; ?></h1> -->
+                             <img src="../public/asset/produits<?= $produit->img; ?>" alt="produit" style='width:100%;'>
+                             </p>
+                         </div>
+                         <div class="element">
+                             <!-- <p><h1><?= $produit->titre; ?></h1> -->
+                             <img src="../public/asset/produits<?= $produit->img; ?>" alt="produit" style='width:100%;'>
+                             </p>
+                         </div>
                      <?php endforeach; ?>
-               <?php }?>
+                <?php } else{?>
+                <h1>Dernnière sortie</h1>
+                <?php foreach ($last as $lasts): ?>
+                <div class="element last">
+                <img src="../public/asset/produits<?= $lasts->img; ?>" alt="produit" style='width:100%;'>
+                </div>
+                <?php endforeach; ?>
+                <?php }?>
             </div>
             <div class="board">
-                ggg
+          
             </div>
     </div>
 
-    <!-- <div id="article" class="article linked-select" data_target="">
-        <p><h1><?= $produit->titre; ?></h1></p>
-        <p><h1><?= $produit->img; ?></h1></p>
-        <p><h1><?= $produit->description; ?></h1></p>
-    </div> -->
 </section>

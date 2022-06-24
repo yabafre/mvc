@@ -79,30 +79,34 @@
 
 <?= $content; ?>
 
+<section class="secu">
+      <div class="ath">
+          <img src="../public/asset/icon/shield.svg" alt="#" />
+          <div>
+            <h1>Sneakers authentiques</h1>
+            <p>Tous les produits vendus sur Yuniq sont authentifiés par nos experts avant de vous être envoyés.</p>
+          </div>
+      </div>
+      <div class="ath">
+          <img src="../public/asset/icon/4x.svg" alt="#" />
+          <div>
+            <h1>Paiement en plusieurs fois</h1>
+            <p>Si vous le souhaitez, vous pouvez payer en 2, 3, 4 ou 10 fois très simplement lors du paiement.</p>
+          </div>
+      </div>
+      <div class="ath">
+          <img src="../public/asset/icon/Icone_Retours_Gratuits_6ed3e44d-6e4b-42e7-9cfb-881069114203_800x 1.svg" alt="#" />
+          <div>
+            <h1>Retours offerts</h1>
+            <p>Les sneakers ne vous conviennent pas ? Renvoyez-les gratuitement !</p>
+          </div>
+      </div>
+</section>
+
 <footer>
-        <div class="wro">
-          <a href="#">Prochaine sortie</a>
-          <a href="#">marque</a>
-          <a href="#">Categorie</a>
-          <a href="#">Tendence</a>
-        </div>
           <div class="contact">
             <div class="sav">
-                          <div class="incontact">
-                            <div class="fram">
-                              <h1>Contact</h1>
-                              <p>une équipe d'experts à votre service au :</p>
-                              <span>+33 0 00 00 00 00</span>
-                              <p>Du lundi au vendredi de 09h à 20h</p>
-                            </div>
-                            <div class="fram2">
-                              <button type="submit">
-                                 <span>Nous écrire</span>
-                              </button>
-                            </div>
-                          </div> 
-
-                          <div class="social">
+              <div class="social">
                             <h2>Nos réseaux sociaux</h2>
                             <nav>
                               <ul>
@@ -123,18 +127,35 @@
                                 </li>
                               </ul>
                             </nav>
-                          </div>
-                        </div>
-
+              </div>
+              <div class="incontact">
+                            <div class="fram">
+                              <h1>Contact</h1>
+                              <p>une équipe d'experts à votre service au :</p>
+                              <span>+33 0 00 00 00 00</span>
+                              <p>Du lundi au vendredi de 09h à 20h</p>
+                            </div>
+                            <div class="fram2">
+                              <button type="submit">
+                                 <span>Nous écrire</span>
+                              </button>
+                            </div>
+                          </div> 
+            </div>
+            <div class="wro">
+                <a href="#">Prochaine sortie</a>
+                <a href="#">marque</a>
+                <a href="#">Categorie</a>
+                <a href="#">Tendence</a>
+            </div>
             <div class="newsletter">
               <p><span>Inscrivez vous à la newsletter :</span> Une suprise vous attend 😲</p>
               <p class="e-mail">Votre adresse e-mail</p>
               <div class="mail">
-                <input type="search" name="" id="">
+                <div class="enterMail"><input type="mail" name="mail" id="mail"></div>
                 <button type="submit"><span>Envoyez</span></button>
               </div>
             </div>
-            
           </div>
         <div class="mention">
           <a href="#">Mentions légales</a>
@@ -143,8 +164,8 @@
           <a href="#">CGV</a>
         </div>
         <div class="copiryth">
-          <img src="./assets/all paids.svg" alt="#">
-          <p><div id="current_date"> © YUNIQ<span>.</span></p>
+          <img src="../public/asset/icon/Frame 368.svg" alt="#">
+          <p>© <text id="current_date"></text>  YUNIQ</p>
         </div>
     </footer>
 
