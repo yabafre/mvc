@@ -13,6 +13,8 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+<script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
     <link rel="stylesheet" href="../public/css/style.css" />
     <link rel="stylesheet" href="../public/css/log.css" />
     <link rel="stylesheet" href="../public/css/view.css" />
@@ -45,34 +47,29 @@
             <input type="search" name="" id="search" placeholder="Recherche">
         </div>
         <div class="nav-list">
-                <a href="../public/index.php?p=users.login" class="sign-user" aria-label="Sign in page">
-                  <img src="../public/asset/icon/account.png" alt="user-icon">
-                </a>
-                <div class="sign-btns">
-                  <a href="../public/index.php?p=users.login" class="btn-connexion">Connexion</a>
-                  <a href="#" class="btn-deconnexion">Deconnexion</a>
-                </div>
-              <div>
-                <?php
-              if(!empty($_SESSION) && $_SESSION['user']->role=='ROLE_ADMIN'){
-                    ?><a href="?p=admin.posts.index" style='color:red;'>ADMIN</a><?php
-                }
-                ?>
-              </div>
-              <div class="main-navlinks">
-                <button class="hamburger" type="button" aria-label="Toggle navigation" aria-expanded="false">
-                  <img src="../public/asset/icon/Vector.png" alt="">
-                </button>
-                <div class="navlinks-container">
-                  <a href="defaul.php" aria-current="page">Home</a>
-                  <a href="#" aria-current="page">favoris</a>
-                  <a href="#" aria-current="page">Shop</a>
-                  <a href="#" aria-current="page">Tendences</a>
-                  <a href="#" aria-current="page">Editos</a>
-                  <a href="#" aria-current="page">A propos de nous</a>
-                </div>
-              </div>
-          </div>
+                    <?php if(!empty($_SESSION) && $_SESSION['user']->role=='ROLE_ADMIN'){ ?>
+                    <div class="account">
+                        <div class="sign">
+                          <button class="roleAdmin"><a  href="?p=admin.posts.index">admin <ion-icon name="build-outline"></ion-icon></a></button>
+                        </div>
+                        <div class="option">
+                          <a href="../public/index.php?p=users.logout">Deconnexion
+                          </a>
+                        </div>
+                    </div>
+                    
+                    <?php } else {?>
+                    <div class="sign">
+                      <a href="../public/index.php?p=users.login" class="btn-connexion"><img src="../public/asset/icon/account.png" alt="User"></a>
+                    </div>
+                    <?php }?>
+                    <div class="main-navlinks">
+                        <button class="hamburger" type="button" aria-label="Toggle navigation" aria-expanded="false">
+                          <img src="../public/asset/icon/Vector.png" alt="">
+                        </button>
+                    </div>
+        </div>
+        </div>
       </nav>
 </header>
 

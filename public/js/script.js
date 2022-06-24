@@ -25,3 +25,11 @@ if (document.location.toString().match("#categorie")) {
     speed
   );
 }
+
+// /*---------------sign hover----------*/
+// const sign = document.querySelector(".sign");
+// const signMenu = document.querySelector(".option");
+
+// sign.addEventListener('mouseover', ()=>{
+//   signMenu.style.display = 'block';
+// })

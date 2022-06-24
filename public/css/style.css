@@ -30,6 +30,7 @@ header.scrolled {
   backdrop-filter: blur(29px);
 }
 
+
 button {
   background: none;
   border: 1px solid #8d8d8e;
@@ -59,6 +60,27 @@ nav {
   padding-top: 50px;
 }
 
+.sign{
+  width: 100%;
+  padding: 5px;
+}
+
+.roleAdmin a{
+  display: flex;
+  color: black;
+  font-size: 20px;
+  font-weight: 700;
+  padding: 5px;
+  background-color: white;
+  border-radius: 8px;
+  text-transform: uppercase;
+  text-decoration: none;
+}
+.roleAdmin a:hover{
+  color: white;
+  background-color: black;
+}
+
 .search {
   display: flex;
   align-items: center;
@@ -83,14 +105,10 @@ nav {
   width: 120px;
 }
 
-.navlinks-container a,
-.sign-btns {
+.navlinks-container a {
   display: none;
 }
-.sign-user img,
-.hamburger {
-  width: 30px;
-}
+
 .nav-list button {
   background-color: inherit;
   border: inherit;
@@ -98,11 +116,37 @@ nav {
 }
 
 .nav-list {
-  width: 100px;
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  margin-right: 20px;
+  justify-content: center;
+}
+.account{
+  position: absolute;
+  right: 130px;
+  top: 15px;
+  height: 146%;
+}
+.account:hover .sign{
+  position: relative;
+  height: 100%;
+}
+.account:hover .option{
+  display: block;
+}
+
+.option{
+  display: none;
+  position: absolute;
+  border-radius: 10px;
+  top: 50px;
+  height: 35px;
+  width: 200px;
+  padding: 5px;
+  text-decoration: none;
+  background-color: white;
+}
+.option a{
+  text-decoration: none;
 }
 
 .secu {
@@ -111,7 +155,6 @@ nav {
   align-items: center;
   text-align: center;
   height: 184px;
-  margin-top: 80px;
   background: #f9f9f9;
 }
 
