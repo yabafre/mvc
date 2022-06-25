@@ -29,26 +29,29 @@ class UsersController extends AppController{
                 'email' => $_POST['email'],
                 'tel' => $_POST['tel'],
                 'password' => $_POST['password'],
-                'role' => "ROLE_ADMIN"
+                'role' => "ROLE_USER"
             ]);
             if($result){
                 return $this->index();
             }
         }
         $form = new BootstrapForm($_POST);
+        $produits = $this->Produit->all();
         $this->render('admin.users.add', compact('users', 'form','produits'));
     }
 
     public function edit(){
         $users = $this->User->find($_GET['id']);
+        $users = $this->User->all();
 
         if (!empty($_POST)) {
-            $result = $this->Produit->update($_GET['id'], [
+            $result = $this->User->update($_GET['id'], [
                 'firstname' => $_POST['firstname'],
                 'lastname' => $_POST['lastname'],
                 'email' => $_POST['email'],
                 'tel' => $_POST['tel'],
-                'password' => $_POST['password']
+                'password' => $_POST['password'],
+                'role' => $_POST['role']
             ]);
                 
             if($result){
@@ -56,6 +59,7 @@ class UsersController extends AppController{
             }
         }
         $form = new BootstrapForm($users);
+        $produits = $this->Produit->all();
         $this->render('admin.users.edit', compact('users', 'form','produits'));
     }
 
@@ -93,7 +97,8 @@ class UsersController extends AppController{
             }
         }
         $form = new BootstrapForm($_POST);
-        $this->render('users.inscription ', compact('form', 'errors', 'messageError','produits',));
+        $produits = $this->Produit->all();
+        $this->render('users.inscription ', compact('form', 'errors', 'messageError', 'users','produits',));
     }
 
     public function registration($donnees){
@@ -103,7 +108,7 @@ class UsersController extends AppController{
                 'firstname' => $_POST['firstname'],
                 'lastname' => $_POST['lastname'],
                 'tel' => $_POST['tel'],
-                'password' => sha1($_POST['password']),
+                'password' => password_hash($_POST['password'], PASSWORD_DEFAULT),
                 'role' => 'ROLE_USER',
             ]);
             if($result){

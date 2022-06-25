@@ -13,7 +13,7 @@ class ProduitTable extends Table{
      */
     public function last(){
         return $this->query("
-            SELECT produits.id, produits.titre, produits.img,  produits.description, produits.prix, categories.titre as categorie, sous_categories.titre as souscategorie
+            SELECT produits.id, produits.titre, produits.img1, produits.img2, produits.img3,  produits.description, produits.prix, categories.titre as categorie, sous_categories.titre as souscategorie
             FROM produits
             LEFT JOIN categories ON category_id = categories.id
             LEFT JOIN sous_categories ON sous_category_id = sous_categories.id
@@ -28,7 +28,7 @@ class ProduitTable extends Table{
      */
     public function lastByCategory($category_id){
         return $this->query("
-            SELECT produits.id, produits.titre, produits.description, produits.img, produits.prix, categories.titre as categorie
+            SELECT produits.id, produits.titre, produits.description, produits.img1, produits.img2, produits.img3, produits.prix, categories.titre as categorie
             FROM produits
             LEFT JOIN categories ON category_id = categories.id
             LEFT JOIN sous_categories ON sous_category_id = sous_categories.id
@@ -43,7 +43,7 @@ class ProduitTable extends Table{
      */
     public function findWithCategory($id){
         return $this->query("
-            SELECT produits.id, produits.titre, produits.description, produits.img
+            SELECT produits.id, produits.titre, produits.description, produits.img1, produits.img2, produits.img3
             FROM produits
             WHERE produits.id = ?", [$id], true);
     }

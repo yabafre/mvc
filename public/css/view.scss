@@ -27,9 +27,9 @@
     display: grid;
     grid-template-areas: "a a a b";
     grid-template-columns: repeat(4, 1fr);
-    grid-column-gap: 24px;
+    grid-column-gap: 26px;
     height: fit-content;
-    z-index: 1;
+    background-color: rgb(207, 134, 38);
     .produit {
       grid-area: a;
       display: grid;
@@ -42,7 +42,7 @@
       }
       h1 {
         position: absolute;
-        left: 20px;
+        left: 130px;
       }
     }
     .board {

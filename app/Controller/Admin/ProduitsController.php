@@ -36,7 +36,9 @@ class ProduitsController extends AppController{
                 'prix' => $_POST['prix'],
                 'description' => $_POST['description'],
                 'category_id' => $_POST['category_id'],
-                'img' => ($image)? $image : null, 
+                'img1' => ($image)? $image : null, 
+                'img2' => ($image)? $image : null, 
+                'img3' => ($image)? $image : null, 
             ]);
             if($result){
                 return $this->index();
@@ -63,8 +65,11 @@ class ProduitsController extends AppController{
 
             $result = $this->Produit->update($_GET['id'], [
                 'titre' => $_POST['titre'],
+                'prix' => $_POST['prix'],
                 'description' => $_POST['description'],
-                'img' => ($image)? $image : $produit->img,
+                'img1' => ($image)? $image : $produit->img1,
+                'img2' => ($image)? $image : $produit->img2,
+                'img3' => ($image)? $image : $produit->img3,
                 'prix' => $_POST['prix'],
                 'category_id' => $_POST['category_id']
             ]);

@@ -11,7 +11,9 @@
                 
                     <?= $form->input('titre', 'Titre de l\'article'); ?>
                 
-                    <?= $form->input('img', 'image du produit', ['type' => 'file']); ?>
+                    <?= $form->input('img1', 'image du produit', ['type' => 'file']); ?>
+                    <?= $form->input('img2', 'image du produit', ['type' => 'file']); ?>
+                    <?= $form->input('img3', 'image du produit', ['type' => 'file']); ?>
                     <?= $form->input('prix', 'prix du produit', ['type' => 'number']); ?>
                     <?= $form->input('description', 'description', ['type' => 'textarea']); ?>
                     <?= $form->select('category_id', 'Catégorie', $categories); ?>

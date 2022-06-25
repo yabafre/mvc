@@ -39,11 +39,11 @@
       grid-template-areas: "a a a b";
   -ms-grid-columns: (1fr)[4];
       grid-template-columns: repeat(4, 1fr);
-  grid-column-gap: 24px;
+  grid-column-gap: 26px;
   height: -webkit-fit-content;
   height: -moz-fit-content;
   height: fit-content;
-  z-index: 1;
+  background-color: #cf8626;
 }
 
 .post .view .produit {
@@ -72,7 +72,7 @@
 
 .post .view .produit h1 {
   position: absolute;
-  left: 20px;
+  left: 130px;
 }
 
 .post .view .board {

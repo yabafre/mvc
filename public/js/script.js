@@ -26,10 +26,14 @@ if (document.location.toString().match("#categorie")) {
   );
 }
 
-// /*---------------sign hover----------*/
-// const sign = document.querySelector(".sign");
-// const signMenu = document.querySelector(".option");
+// /*---------------menu hover----------*/
 
-// sign.addEventListener('mouseover', ()=>{
-//   signMenu.style.display = 'block';
-// })
+const navMenu = document.querySelector(".hamburger");
+const navLinks = document.querySelector(".main-navlinks");
+
+if(navMenu){
+  navMenu.addEventListener("click", () => {
+    navLinks.classList.toggle("eneable");
+    signMenu.classList.remove("eneable");
+  });
+}

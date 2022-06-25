@@ -55,7 +55,7 @@
                 <h1>Dernnière sortie</h1>
                 <?php foreach ($last as $lasts): ?>
                 <div class="element last">
-                <img src="../public/asset/produits<?= $lasts->img; ?>" alt="produit" style='width:100%;'>
+                <img src="../public/asset/produits<?= $lasts->img1; ?>" alt="produit" style='width:100%;'>
                 </div>
                 <?php endforeach; ?>
                 <?php }?>

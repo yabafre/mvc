@@ -38,7 +38,6 @@
           
           <form method="post" autocomplete="off" class="sign-up-form" action="../public/index.php?p=users.inscription">
             <div class="logo">
-              <img src="./img/logo.png" alt="easyclass" />
               <h4>Yuser</h4>
             </div>
             

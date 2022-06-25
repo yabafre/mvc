@@ -47,27 +47,35 @@
             <input type="search" name="" id="search" placeholder="Recherche">
         </div>
         <div class="nav-list">
-                    <?php if(!empty($_SESSION) && $_SESSION['user']->role=='ROLE_ADMIN'){ ?>
-                    <div class="account">
-                        <div class="sign">
-                          <button class="roleAdmin"><a  href="?p=admin.posts.index">admin <ion-icon name="build-outline"></ion-icon></a></button>
-                        </div>
-                        <div class="option">
-                          <a href="../public/index.php?p=users.logout">Deconnexion
-                          </a>
-                        </div>
-                    </div>
                     
-                    <?php } else {?>
-                    <div class="sign">
-                      <a href="../public/index.php?p=users.login" class="btn-connexion"><img src="../public/asset/icon/account.png" alt="User"></a>
+                    <div class="account">
+                        <?php if(!empty($_SESSION) && $_SESSION['user']->role=='ROLE_ADMIN'){ ?>
+                          <button class="roleAdmin"><a  href="?p=admin.posts.index">admin <ion-icon name="build-outline"></ion-icon></a></button>
+                        <?php } else {?>
+                          <button class="connexion"><a href="../public/index.php?p=users.login"><img src="../public/asset/icon/account.png" alt="User"></a></button>
+                        <?php }?>
                     </div>
-                    <?php }?>
                     <div class="main-navlinks">
-                        <button class="hamburger" type="button" aria-label="Toggle navigation" aria-expanded="false">
-                          <img src="../public/asset/icon/Vector.png" alt="">
-                        </button>
+                      <div class="nav-link">
+                        <ul>
+                            <?php if(!empty($_SESSION) && $_SESSION['user']->role=='ROLE_USER'){ ?>
+                            <li><a href="#">Compte</a></li>
+                            <li><a href="../public/index.php?p=users.logout">Deconnexion</a></li>
+                            <?php } elseif (!empty($_SESSION) && $_SESSION['user']->role=='ROLE_ADMIN'){  ?>
+                            <li><a href="../public/index.php?p=users.logout">Deconnexion</a></li>
+                            <?php } ?>
+                            <li><a href="../public/index.php?p=users.login">Home</a></li>
+                            <li><a href="#">Product</a></li>
+                            <li><a href="#">Home</a></li>
+                            <li><a href="#">Home</a></li>
+                            <li><a href="#">Home</a></li>
+                            <li><a href="#">Home</a></li>
+                        </ul>
+                      </div>
                     </div>
+                    <button class="hamburger"     type="button" aria-label="Toggle navigation" aria-expanded="false">
+                          <img src="../public/asset/icon/Vector.png" alt="">
+                    </button>
         </div>
         </div>
       </nav>

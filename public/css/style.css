@@ -24,12 +24,10 @@ header.scrolled {
   left: 0;
   z-index: 10;
   transition: 0.7s;
-
   background-color: rgba(171, 170, 170, 0.545);
   box-shadow: 0 5px 20px 0.1px rgba(121, 115, 115, 0.544);
   backdrop-filter: blur(29px);
 }
-
 
 button {
   background: none;
@@ -60,12 +58,18 @@ nav {
   padding-top: 50px;
 }
 
-.sign{
+.sign {
   width: 100%;
   padding: 5px;
 }
 
-.roleAdmin a{
+.roleAdmin, .connexion{
+  margin-right: 10px;
+}
+.connexion img{
+  width: 75%;
+}
+.roleAdmin a {
   display: flex;
   color: black;
   font-size: 20px;
@@ -76,7 +80,7 @@ nav {
   text-transform: uppercase;
   text-decoration: none;
 }
-.roleAdmin a:hover{
+.roleAdmin a:hover {
   color: white;
   background-color: black;
 }
@@ -120,34 +124,44 @@ nav {
   align-items: center;
   justify-content: center;
 }
-.account{
+
+.nav-link ul {
+  display: flex;
+  flex-direction: column;
+  justify-self: start;
+}
+.nav-link ul li {
+  list-style: none;
+  padding: 10px 38px ;
+  text-align: start;
+  text-decoration: none;
+}
+.nav-link ul li a {
+  text-decoration: none;
+  color: #0c0c0d;
+}
+.nav-link ul li:hover a{
+  color: white;
+}
+.nav-link ul li:hover {
+  background-color: #0c0c0d;
+  border-radius: 21px;
+}
+.main-navlinks{
+  display: none;
+  top: 95px;
   position: absolute;
-  right: 130px;
-  top: 15px;
-  height: 146%;
+  border-radius: 21px;
+  background-color: rgba(236, 236, 236, 0.911);
+  width: 8%;
+  margin-right: -100%;
+  transition: cubic-bezier(0.55, 0.055, 0.675, 0.19) 0.5s;
 }
-.account:hover .sign{
-  position: relative;
-  height: 100%;
-}
-.account:hover .option{
+.main-navlinks.eneable {
   display: block;
+  margin-right: 2%;
 }
 
-.option{
-  display: none;
-  position: absolute;
-  border-radius: 10px;
-  top: 50px;
-  height: 35px;
-  width: 200px;
-  padding: 5px;
-  text-decoration: none;
-  background-color: white;
-}
-.option a{
-  text-decoration: none;
-}
 
 .secu {
   display: flex;
@@ -158,7 +172,7 @@ nav {
   background: #f9f9f9;
 }
 
-.ath div{
+.ath div {
   padding-top: 15px;
 }
 
@@ -198,14 +212,14 @@ footer {
 
 .contact {
   display: grid;
-  grid-template-areas: 'n n v v m';
-  grid-template-columns: repeat(3,1fr);
+  grid-template-areas: "n n v v m";
+  grid-template-columns: repeat(3, 1fr);
   padding-top: 50px;
 }
-.contact .sav{
+.contact .sav {
   grid-area: n;
 }
- 
+
 .incontact {
   display: flex;
   justify-content: space-between;
@@ -225,10 +239,10 @@ footer {
 .sav .social nav ul {
   width: 100%;
   display: grid;
-  grid-template-columns: repeat(5,1fr);
+  grid-template-columns: repeat(5, 1fr);
   list-style: none;
 }
-.newsletter{
+.newsletter {
   grid-area: m;
   padding-top: 20px;
 }
@@ -253,18 +267,18 @@ footer {
 
 .mail {
   display: grid;
-  grid-template-areas: 'c c c d';
-  grid-template-columns: repeat(1,1fr);
+  grid-template-areas: "c c c d";
+  grid-template-columns: repeat(1, 1fr);
   background-color: #ffffff;
   border-radius: 10px;
 }
 
-.enterMail{
+.enterMail {
   grid-area: c;
   text-align: center;
   padding-top: 2px;
 }
-.enterMail input{
+.enterMail input {
   width: 95%;
   height: 95%;
   font-size: large;
@@ -311,12 +325,12 @@ footer {
   text-transform: uppercase;
 }
 
-.copiryth{
+.copiryth {
   display: flex;
   justify-content: space-between;
 }
-.copiryth p{
-  font-family:'Poppins', Arial, Helvetica, sans-serif;
+.copiryth p {
+  font-family: "Poppins", Arial, Helvetica, sans-serif;
 }
 
 @media (max-width: 900px) {

@@ -11,7 +11,9 @@
                     <thead>
                     <tr>
                         <td>ID</td>
-                        <td>Image</td>
+                        <td>Image1</td>
+                        <td>Image2</td>
+                        <td>Image3</td>
                         <td>Titre</td>
                         <td>Prix</td>
                         <td>Categories</td>
@@ -19,10 +21,14 @@
                     </tr>
                     </thead>
                     <tbody></tbody>
-                        <?php foreach($produits as $produit): ?>
+                        <?php
+                            var_dump($produits);
+                        foreach($produits as $produit): ?>
                         <tr>
                             <td><?= $produit->id; ?></td>
-                            <td><img src="../public/asset/produits/<?= $produit->img; ?>" style="width: 15%;"></td>
+                            <td><img src="../public/asset/produits/<?= $produit->img1; ?>" style="width: 15%;"></td>
+                            <td><img src="../public/asset/produits/<?= $produit->img2; ?>" style="width: 15%;"></td>
+                            <td><img src="../public/asset/produits/<?= $produit->img3; ?>" style="width: 15%;"></td>
                             <td><?= $produit->titre; ?></td>
                             <td><?= $produit->prix; ?> €</td>
                             <td><?= $produit->category_id; ?></td>
