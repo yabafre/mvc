@@ -7,7 +7,7 @@
                     <a href="#" class="btn"> View All</a>
                 </div>
               
-                <form method="post" enctype="multipart/form-data">
+                <form method="post" enctype="multipart/form-data"  action="../public/index.php?p=admin.produits.add">
                 
                     <?= $form->input('titre', 'Titre de l\'article'); ?>
                 

@@ -28,10 +28,12 @@ class PostsController extends AppController{
         $categorie = $this->Category->find($_GET['id']);
         if($categorie === false){
             $this->notFound();
+        } else{
+            $articles = $this->Post->lastByCategory($_GET['id']);
+            $categories = $this->Category->all();
+            $this->render('posts.category', compact('articles', 'categories', 'categorie'));
         }
-        $articles = $this->Post->lastByCategory($_GET['id']);
-        $categories = $this->Category->all();
-        $this->render('posts.category', compact('articles', 'categories', 'categorie'));
+        
     }
 
     public function show(){

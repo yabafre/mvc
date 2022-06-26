@@ -41,11 +41,10 @@ class ProduitsController extends AppController{
     }
 
     public function show(){
+        $categories = $this->Category->all();
+        $produit = $this->Produit->find($_GET['id']);
 
-        $produit = $this->Produit->findWithCategory($_GET['id']);
-        App::getInstance()->title = $produit->titre;
-
-        $this->render('produits.show', compact('produit'));
+        $this->render('produits.show', compact('produit', 'categories'));
     }
 
 }

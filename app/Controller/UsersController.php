@@ -42,6 +42,77 @@ class UsersController extends AppController {
     }
 
 
+     /*
+    * fonction d'accès compte utilisateur
+    */
+
+    public function account(){
+        $this->loadModel('Produit');
+
+        $users = $this->User->find($_SESSION['auth']);
+        $produits = $this->Produit->all();
+        $form = new BootstrapForm($users);
+        $this->render('users.account', compact('form','users','produits'));
+    }
+
+    /*
+    * fonction de modifier un utilisateur depuis Compte
+    */
+
+    public function Modification(){
+        $errors = array();
+        $success = true;
+
+        if(empty($_POST['firstname'])){
+            $errors["firstnameError"] = "Veuillez saisir votre prénom.";
+            $success = false;
+        }
+
+        if(empty($_POST['lastname'])){
+            $errors["lastnameError"] = "Veuillez saisir votre nom.";
+            $success = false;
+        }
+
+        if(!empty($_POST["tel"]) && (!filter_var( $_POST["tel"]) || strlen($_POST["tel"]) != 10)){
+            $errors["telError"] = "Veuillez saisir un numéro valide.";
+            $success = false;
+        }
+
+        if(empty($_POST["email"])){
+            $errors["emailError"] = "Veuillez saisir votre e-mail.";
+            $success = false;
+        } else if(!empty($_POST["email"]) && !filter_var($_POST["email"], FILTER_VALIDATE_EMAIL)){
+            $errors["emailError"] = "Veuillez saisir un email valide.";
+            $success = false;
+        }
+
+        if($success){
+            $this->editCompte($_POST);
+        }else{
+            echo '<p class="font40 coloro">no</p>';
+        }
+        $form = new BootstrapForm($_POST);
+        $this->render('users.account', compact( 'form', 'errors', 'success'));
+    }
+
+    /*
+    * fonction d'enregistrement des modifs de l'utilisateur
+    */
+
+    public function editCompte($donnees){
+        if (!empty($donnees)) {
+            $result = $this->User->update($_SESSION['auth'], [
+                'firstname' => $_POST['firstname'],
+                'lastname' => $_POST['lastname'],
+                'tel' => $_POST['tel'],
+                'email' => $_POST['email'],
+            ]);
+            if($result){
+                header('Location: index.php?p=users.account');
+            }
+
+        }
+    }
     /*
     * fonction d'inscription de l'utilisateur
     */

@@ -17,52 +17,36 @@
                      <?php foreach ($produits as $produit): ?>
                         <div class="element">
                              <!-- <p><h1><?= $produit->titre; ?></h1> -->
-                             <img src="../public/asset/produits<?= $produit->img; ?>" alt="produit" style='width:100%;'>
+                             <a href="index.php?p=produits.show&id=<?= $produit->id?>">
+                             <img src="../public/asset/produits/<?= $produit->img1; ?>" alt="produit" style='width:100%;'>
+                             </a>
+                            
+                         </div>
+                         <div class="element">
+                             <!-- <p><h1><?= $produit->titre; ?></h1> -->
+                             <img src="../public/asset/produits/<?= $produit->img2; ?>" alt="produit" style='width:100%;'>
                              </p>
                          </div>
                          <div class="element">
                              <!-- <p><h1><?= $produit->titre; ?></h1> -->
-                             <img src="../public/asset/produits<?= $produit->img; ?>" alt="produit" style='width:100%;'>
+                             <img src="../public/asset/produits/<?= $produit->img3; ?>" alt="produit" style='width:100%;'>
                              </p>
-                         </div>
-                         <div class="element">
-                             <!-- <p><h1><?= $produit->titre; ?></h1> -->
-                             <img src="../public/asset/produits<?= $produit->img; ?>" alt="produit" style='width:100%;'>
-                             </p>
-                         </div>
-                         <div class="element">
-                             <!-- <p><h1><?= $produit->titre; ?></h1> -->
-                             <img src="../public/asset/produits<?= $produit->img; ?>" alt="produit" style='width:100%;'>
-                             </p>
-                         </div>
-                         <div class="element">
-                             <!-- <p><h1><?= $produit->titre; ?></h1> -->
-                             <img src="../public/asset/produits<?= $produit->img; ?>" alt="produit" style='width:100%;'>
-                             </p>
-                         </div>
-                         <div class="element">
-                             <!-- <p><h1><?= $produit->titre; ?></h1> -->
-                             <img src="../public/asset/produits<?= $produit->img; ?>" alt="produit" style='width:100%;'>
-                             </p>
-                         </div>
-                         <div class="element">
-                             <!-- <p><h1><?= $produit->titre; ?></h1> -->
-                             <img src="../public/asset/produits<?= $produit->img; ?>" alt="produit" style='width:100%;'>
-                             </p>
-                         </div>
+                         </div>                         
                      <?php endforeach; ?>
                 <?php } else{?>
                 <h1>Dernnière sortie</h1>
                 <?php foreach ($last as $lasts): ?>
                 <div class="element last">
-                <img src="../public/asset/produits<?= $lasts->img1; ?>" alt="produit" style='width:100%;'>
+                <a href="index.php?p=produits.show&id=<?= $lasts->id?>">
+                             <img src="../public/asset/produits/<?= $lasts->img1; ?>" alt="produit" style='width:100%;'>
+                             </a>
                 </div>
-                <?php endforeach; ?>
-                <?php }?>
-            </div>
-            <div class="board">
-          
-            </div>
+                    <?php endforeach; ?>
+                    <?php }?>
+                </div>
+                <div class="board">
+            
+                </div>
     </div>
 
 </section>

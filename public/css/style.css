@@ -14,7 +14,7 @@ html {
 header {
   position: absolute;
   width: 100%;
-  top: 0;
+  top: 8px;
   left: 0;
   background-color: rgba(255, 255, 255, 0);
 }
@@ -24,7 +24,7 @@ header.scrolled {
   left: 0;
   z-index: 10;
   transition: 0.7s;
-  background-color: rgba(171, 170, 170, 0.545);
+  background-color: rgba(190, 190, 220, 0.745);
   box-shadow: 0 5px 20px 0.1px rgba(121, 115, 115, 0.544);
   backdrop-filter: blur(29px);
 }
@@ -35,6 +35,18 @@ button {
   box-sizing: border-box;
   border-radius: 99px;
   cursor: pointer;
+}
+
+.wallErreur{
+  height: 100vh;
+  width: 100%;
+  background-color: #0F5E54;
+  background-size: cover;
+}
+
+.wallErreur video {
+  width: 100%;
+  padding-top: 50px;
 }
 
 span {
@@ -63,10 +75,12 @@ nav {
   padding: 5px;
 }
 
-.roleAdmin, .connexion{
-  margin-right: 10px;
+.roleAdmin, .connexion, .panier{
+  margin-right: 15px;
+  padding-left: 10px;
+  border-right: 5px solid black;
 }
-.connexion img{
+.connexion img, .panier img{
   width: 75%;
 }
 .roleAdmin a {

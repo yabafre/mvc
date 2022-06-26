@@ -1,0 +1,86 @@
+<h1>Récapitulatif de la commande</h1>
+
+<?php 
+foreach($produitsAll['produit'] as $produit){
+  ?>
+    <div >
+        <p>Id : <?=$produit['produit']->id ?></p>
+    </div>
+    <div >
+        <p>Titre : <?=$produit['produit']->titre ?></p>
+    </div>
+    <div >
+        <img src="../public/img/upload/<?= $produit['produit']->img1; ?>">
+    </div>
+    <div >
+    <p>Nbr : <?=$produit['produit-nbr'] ?></p>
+    </div>
+    <div >
+       <p>Total : <?=$produit['produit-total'] ?>€</p>
+    </div>
+<?php  
+}
+
+foreach($produitsAll['commande'] as $commande){ 
+  ?>
+    <div >
+      <p>Total de la commande : <?=$commande?>€</p>
+    </div>
+<?php
+}
+?>
+    <p><a href="index.php?p=panier.index"> Modifier la commande</a></p>
+
+  </div>
+</div>
+
+<form action="index.php?p=panier.confirmation" method="POST">
+
+ <button class="btn">Payer</button>
+
+
+<?php foreach($produitsAll['produit'] as $id => $produit){ ?>
+
+      <input type="hidden" name="produit-id-<?=$id;?>" id="produit-id-<?=$id;?>" value="<?=$id;?>">
+      <input type="hidden" name="produit-titre-<?=$id;?>" id="produit-titre-<?=$id;?>" value="<?=$produit['produit']->titre;?>" >
+      <input type="hidden" name="produit-nbr-<?=$id;?>" id="produit-nbr-<?=$id;?>" value="<?=$produit['produit-nbr']?>" >
+      <input type="hidden" name="produit-total-<?=$id;?>" id="produit-total-<?=$id;?>" value="<?=$produit['produit-total']?>" >
+
+<?php }?>
+
+<?php foreach($produitsAll['commande'] as $commande){ ?>
+  <input type="hidden" name="commande-total" id="commande-total" value="<?=$commande;?>" >
+<?php }?>
+
+<?php 
+  if(isset($_SESSION['auth']) && !empty($_SESSION['auth'])){
+?>
+  <input type="hidden" name="user_id" id="user_id" value="<?=$_SESSION['user']->id?>" >
+<?php
+  }  
+?>
+
+
+                        <
+                                    <p >Résumé</p>
+                                    
+                                    <?php foreach($produitsAll['commande'] as $commande){ ?>
+                                      <p ><span >Prix:</span><span>:<?=$commande;?>€</span></p>
+
+                                    <?php }?>
+                                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Atque
+                                        nihil neque
+                                        quisquam aut
+                                        repellendus, dicta vero? Animi dicta cupiditate, facilis provident quibusdam ab
+                                        quis,
+                                        iste harum ipsum hic, nemo qui!</p>
+                               
+                                    <p >Résumé</p>
+                                    <?php foreach($produitsAll['commande'] as $commande){ ?>
+
+                                    <p>
+                                        <span>Prix:</span>
+                                        <span >:<?=$commande;?>€</span>
+                                    </p>
+
+                                    <?php }?>

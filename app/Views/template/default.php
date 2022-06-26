@@ -13,16 +13,22 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
     <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
 <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
     <link rel="stylesheet" href="../public/css/style.css" />
     <link rel="stylesheet" href="../public/css/log.css" />
     <link rel="stylesheet" href="../public/css/view.css" />
+    <link rel="stylesheet" href="../public/css/produitPage.css" />
+    <link rel="stylesheet" href="../public/css/account.css" />
+    <link rel="stylesheet" href="../public/css/panier.css" />
+    <link rel="stylesheet" href="../public/css/recap.css" />
    
     
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script src="../public/js/script.js" defer></script>
     <script src="../public/js/logScript.js" defer></script>
+    <script src="../public/js/produitShow.js" defer></script>
     
 
     <link rel="icon" href="../public/assets/yq.png">
@@ -59,7 +65,7 @@
                       <div class="nav-link">
                         <ul>
                             <?php if(!empty($_SESSION) && $_SESSION['user']->role=='ROLE_USER'){ ?>
-                            <li><a href="#">Compte</a></li>
+                            <li><a href="../public/index.php?p=users.account">Compte</a></li>
                             <li><a href="../public/index.php?p=users.logout">Deconnexion</a></li>
                             <?php } elseif (!empty($_SESSION) && $_SESSION['user']->role=='ROLE_ADMIN'){  ?>
                             <li><a href="../public/index.php?p=users.logout">Deconnexion</a></li>
@@ -67,12 +73,11 @@
                             <li><a href="../public/index.php?p=users.login">Home</a></li>
                             <li><a href="#">Product</a></li>
                             <li><a href="#">Home</a></li>
-                            <li><a href="#">Home</a></li>
-                            <li><a href="#">Home</a></li>
-                            <li><a href="#">Home</a></li>
+
                         </ul>
                       </div>
                     </div>
+                    <button class="panier"><a href="../public/index.php?p=panier.index"><img src="../public/asset/icon/card.png" alt="User"></a></button>
                     <button class="hamburger"     type="button" aria-label="Toggle navigation" aria-expanded="false">
                           <img src="../public/asset/icon/Vector.png" alt="">
                     </button>

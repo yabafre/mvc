@@ -1,0 +1,144 @@
+
+
+.wallAccount {
+    height: 35vh;
+    width: 100vw;
+    background-image: url("../asset/wallper/log.gif");
+    background-size: cover;
+    position: relative;
+    text-align: center;
+    z-index: -1;
+    p {
+      position: absolute;
+      width: 100vw;
+      min-height: 36vh;
+      padding: 60px 864px 0 834px;
+      font-size: 39px;
+      font-weight: 600;
+      text-transform: uppercase;
+      color: blanchedalmond;
+      background-color: rgba(191, 199, 199, 0.028);
+      backdrop-filter: blur(45px);
+    }
+  }
+
+
+.mainAccount{
+    width: 100%;
+    height: 70vh;
+    margin-bottom: 20%;
+    z-index: -1;
+
+    .header{
+        display: flex;
+        align-items: center;
+        position: relative;
+        max-width: 100%;
+        left: 80px;
+        .nv{
+
+        }
+    }
+
+
+    .abox {
+        position: relative;
+        width: 100%;
+        max-width: 1272px;
+        height: 60vh;
+        left: 200px;
+        margin: 100px 0 200vw 70px;
+        background-color: #fff;
+        border-radius: 3.3rem;
+        box-shadow: 60px 60px 40px 60px rgba(0, 0, 0, 0.27);
+      }
+      .form-wrap {
+        position: absolute;
+        height: 100%;
+        width: 100%;
+        display: grid;
+        grid-template-areas: "u k k";
+        grid-template-columns: repeat(3,1fr);
+      }
+      
+      .edit-up-form {
+        grid-area: k;
+        max-width: 481px;
+        width: 100%;
+        margin: 0px auto;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+      }
+      .dash-user{
+        grid-area: u;
+        width: 100%;
+        border-radius: 60px 10px;
+        background-color: aquamarine;
+      }
+    
+      .logo2 {
+        display: flex;
+        align-items: center;
+      }
+            
+      .logo2 h4 {
+        font-size: 1.1rem;
+        margin-top: -9px;
+        letter-spacing: -0.5px;
+        color: #151111;
+      }
+      
+      .inputA-wrap {
+        position: relative;
+        height: 37px;
+        margin-bottom: 2rem;
+      }
+      
+      .form-control {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        background: none;
+        border: none;
+        outline: none;
+        border-bottom: 1px solid #bbb;
+        padding: 0;
+        font-size: 0.95rem;
+        color: #151111;
+        transition: 0.4s;
+      }
+      
+      label {
+        position: absolute;
+        left: 0;
+        top: 50%;
+        transform: translateY(-50%);
+        font-size: 0.95rem;
+        color: #bbb;
+        pointer-events: none;
+        transition: 0.4s;
+      }
+      
+      
+      .signA-btn {
+        display: inline-block;
+        width: 100%;
+        height: 43px;
+        background-color: #151111;
+        color: #fff;
+        border: none;
+        cursor: pointer;
+        border-radius: 0.8rem;
+        font-size: 0.8rem;
+        margin-bottom: 2rem;
+        transition: 0.3s;
+      }
+      
+      .signA-btn:hover {
+        background-color: #212e4bd0;
+      }
+      
+      
+}

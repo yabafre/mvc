@@ -1,0 +1,7 @@
+ <!-- <form method="post" action="index.php?p=users.Modification">
+        <?= $form->input('firstname', 'Prénom', ['type' => 'text'], isset($errors["firstnameError"]) ? $errors["firstnameError"] : "");?>
+        <?= $form->input('lastname', 'Nom', ['type' => 'text'], isset($errors["lastnameError"]) ? $errors["lastnameError"] : ""); ?>
+        <?= $form->input('tel', 'Téléphone', ['type' => 'tel', 'maxlength' => '10'],  isset($errors["telError"]) ? $errors["telError"] : ""); ?>
+        <?= $form->input('email', 'Email', ['type' => 'email'],  isset($errors["emailError"]) ? $errors["emailError"] : ""); ?>
+        <button class="btn">Sauver les modifications</button>
+    </form> -->

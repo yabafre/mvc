@@ -1,0 +1,198 @@
+* {
+  margin: 0;
+  list-style: none;
+  text-decoration: none;
+}
+
+.wallShow {
+  height: 35vh;
+  width: 100vw;
+  background-image: url("../asset/wallper/log.gif");
+  background-size: cover;
+  position: relative;
+  text-align: center;
+  z-index: -1;
+}
+
+.wallShow p {
+  position: absolute;
+  width: 100vw;
+  min-height: 36vh;
+  padding: 60px 864px 0 834px;
+  font-size: 39px;
+  font-weight: 600;
+  text-transform: uppercase;
+  color: blanchedalmond;
+  background-color: rgba(191, 199, 199, 0.028);
+  -webkit-backdrop-filter: blur(45px);
+          backdrop-filter: blur(45px);
+}
+
+.main3 {
+  display: -ms-grid;
+  display: grid;
+  width: 100%;
+  height: 100vh;
+      grid-template-areas: "a a a b";
+  -ms-grid-columns: (1fr)[4];
+      grid-template-columns: repeat(4, 1fr);
+  margin-bottom: 60px;
+}
+
+.main3 .title {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  border-bottom: 1.2px solid rgba(92, 92, 92, 0.157);
+}
+
+.main3 .product {
+  -ms-grid-row: 1;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 3;
+  grid-area: a;
+  background-color: rgba(199, 199, 199, 0.228);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.main3 .product .produitInfo {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (1fr)[2];
+      grid-template-columns: repeat(2, 1fr);
+  grid-row-gap: 60px;
+  margin-top: 45px;
+  margin-left: 90px;
+  text-transform: uppercase;
+}
+
+.main3 .product .produitInfo h1 {
+  background: -webkit-linear-gradient(#746f6f, #941b17);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-weight: 700;
+}
+
+.main3 .product .produitInfo h2 {
+  position: relative;
+  right: 60px;
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+  font-weight: 400;
+}
+
+.main3 .product .produitInfo h3 {
+  font-weight: 600;
+  font-size: 25px;
+}
+
+.main3 .detail {
+  -ms-grid-row: 1;
+  -ms-grid-column: 4;
+  grid-area: b;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  text-transform: uppercase;
+  padding: 50px;
+}
+
+.main3 .detail .var {
+  display: none;
+}
+
+.main3 .detail .var p {
+  max-height: 400px;
+  overflow-y: auto;
+}
+
+.main3 .detail .var.active {
+  display: block;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+}
+
+.main3 .detail .select {
+  margin-bottom: 0;
+}
+
+.main3 .detail .select .title h3 span {
+  color: red;
+}
+
+.main3 .detail .select ul {
+  display: -ms-grid;
+  display: grid;
+  padding: 0;
+  -ms-grid-columns: (60px)[6];
+      grid-template-columns: repeat(6, 60px);
+}
+
+.main3 .detail .select ul li {
+  margin-top: 10px;
+}
+
+.main3 .detail .select ul li .but-size, .main3 .detail .select ul li button {
+  background-color: white;
+  border-color: black;
+  width: 45px;
+  border: 2px;
+  cursor: pointer;
+}
+
+.main3 .detail .select ul li .but-size:hover, .main3 .detail .select ul li button:hover {
+  background-color: black;
+  color: white;
+}
+
+.main3 .detail .check-point {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+}
+
+.main3 .detail .check-point .quantity {
+  height: 40px;
+  width: 55px;
+}
+
+.main3 .detail .check-point button {
+  margin-left: 20px;
+  height: 40px;
+  width: 200px;
+  background-color: black;
+  color: white;
+}
+/*# sourceMappingURL=produitPage.css.map */

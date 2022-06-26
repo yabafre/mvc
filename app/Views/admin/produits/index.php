@@ -2,7 +2,8 @@
             <div class="recentOrders">
                 <div class="cardHeader">
                     <h2> Administrer les produits</h2>
-                    <a href="?p=admin.produits.add" class="btn"> Ajouter</a>
+                   <a href="?p=admin.produits.add" class="btn"> Ajouter</a>
+                    
                 </div>
               
                 <h1>Administrer les produits</h1>
@@ -22,13 +23,12 @@
                     </thead>
                     <tbody></tbody>
                         <?php
-                            var_dump($produits);
                         foreach($produits as $produit): ?>
                         <tr>
                             <td><?= $produit->id; ?></td>
-                            <td><img src="../public/asset/produits/<?= $produit->img1; ?>" style="width: 15%;"></td>
-                            <td><img src="../public/asset/produits/<?= $produit->img2; ?>" style="width: 15%;"></td>
-                            <td><img src="../public/asset/produits/<?= $produit->img3; ?>" style="width: 15%;"></td>
+                            <td><img src="../public/asset/produits/<?= $produit->img1; ?>" style="width: 20%;"></td>
+                            <td><img src="../public/asset/produits/<?= $produit->img2; ?>" style="width: 20%;"></td>
+                            <td><img src="../public/asset/produits/<?= $produit->img3; ?>" style="width: 20%;"></td>
                             <td><?= $produit->titre; ?></td>
                             <td><?= $produit->prix; ?> €</td>
                             <td><?= $produit->category_id; ?></td>
