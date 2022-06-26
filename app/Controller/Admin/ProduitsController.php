@@ -10,6 +10,7 @@ class ProduitsController extends AppController{
         parent::__construct();
         $this->loadModel('User');
         $this->loadModel('Produit');
+        $this->loadModel('Commande');
     }
 
     public function index(){
@@ -19,9 +20,10 @@ class ProduitsController extends AppController{
         $this->loadModel('Category');
         $users = $this->User->all();
         $produits = $this->Produit->all();
+        $commande = $this->Commande->all();
         $categories = $this->Category->extract('id', 'titre');
         $form = new BootstrapForm($_POST);
-        $this->render('admin.produits.index', compact('categories', 'form','users', 'produits'));
+        $this->render('admin.produits.index', compact('categories', 'form','users', 'produits','commande'));
     }
 
     public function add(){
@@ -51,9 +53,10 @@ class ProduitsController extends AppController{
         $this->loadModel('Category');
         $users = $this->User->all();
         $produits = $this->Produit->all();
+        $commande = $this->Commande->all();
         $categories = $this->Category->extract('id', 'titre');
         $form = new BootstrapForm($_POST);
-        $this->render('admin.produits.edit', compact('categories', 'form','users', 'produits'));
+        $this->render('admin.produits.edit', compact('categories', 'form','users', 'produits', 'commande'));
     }
 
     public function edit(){
@@ -89,9 +92,10 @@ class ProduitsController extends AppController{
         $this->loadModel('Category');
         $users = $this->User->all();
         $produits = $this->Produit->all();
+        $commande = $this->Commande->all();
         $categories = $this->Category->extract('id', 'titre');
         $form = new BootstrapForm($produit);
-        $this->render('admin.produits.edit', compact('categories', 'form','users', 'produits'));
+        $this->render('admin.produits.edit', compact('categories', 'form','users', 'produits', 'commande'));
     }
 
     public function delete(){

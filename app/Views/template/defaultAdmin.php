@@ -103,7 +103,7 @@
             </div>
             <div class="card">
                 <div>
-                    <div class="numbers">432</div>
+                    <div class="numbers"><?=count($commande)?></div>
                     <div class="cardName">vente</div>
                 </div>
                 <div class="iconBx">

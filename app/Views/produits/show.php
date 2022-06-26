@@ -52,9 +52,12 @@
                     </ul>
                 </div>
            </div>
-                <input type="hidden" name="idProduit" id="idProduit" class="form-control" value="<?=$produit->id;?>">
+
+     <input type="hidden" name="img1" id="img1" class="form-control" value="<?=$produit->img1?>">
+    <input type="hidden" name="idProduit" id="idProduit" class="form-control" value="<?=$produit->id;?>">
     <input type="hidden" name="prix" id="prix" class="form-control" value="<?=$produit->prix;?>">
     <input type="hidden" name="titre" id="titre" class="form-control" value="<?=$produit->titre;?>">
+
            <div class="description">
                 <div class="title">
                     <h3>Description</h3><ion-icon name="chevron-down-outline"></ion-icon>

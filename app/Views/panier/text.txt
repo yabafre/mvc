@@ -1,3 +1,83 @@
+  <?php if(!empty($panier)){ ?>
+    <form class="form-panier" action="index.php?p=panier.recapitulatif" method="POST">
+        <?php foreach ($panier as $idProduit => $champs): ?>
+            <div class="detailPanier">
+                  <div class="itemP">
+                    <input type="hidden" id="produit-id-<?=$idProduit?>" name="produit-id-<?=$idProduit?>"  class="control-panier" value="<?= $idProduit?>">
+                    <input type="hidden" id="produit-<?=$idProduit?>-total" name="produit-<?=$idProduit?>-total" class="control-panier" value="<?= $champs['prix']* $champs['nbr']?>">
+                  </div>
+
+                  <div class="itemP">
+                  <!-- <label>Produit</label> -->
+                  <img src="../public/asset/produits/<?=$champs['img1']?>" alt="#" style=" width:15%;">
+                  </div>
+                  <div class="itemP">
+                  <!-- <label>Produit</label> -->
+                  <input type="text" placefolder="Produit" id="produit-<?=$idProduit?>-titre-disabled" name="produit-<?=$idProduit?>-titre-disabled" class="control-panier" value="<?=$champs['titre']?>" disabled="disabled">
+                  </div>
+
+                  
+                  <div class="itemP">
+                  <!-- <label>Nbr</label> -->
+                  <input type="number" id="produit-<?=$idProduit?>-nbr" name="produit-<?=$idProduit?>-nbr" class="control-panier produit-nbr" value="<?=$champs['nbr']?>"  data-produit="<?=$idProduit?>" data-prix="<?=$champs['prix']?>">
+                  </div>
+                  
+                  <div class="itemP">
+                  <!-- <label>Prix unité</label> -->
+                  <input type="text" id="produit-<?=$idProduit?>-unite-disabled" name="produit-<?=$idProduit?>-unite-disabled" class="control-panier" value="<?=$champs['prix']?>€" disabled="disabled">
+                  </div>
+                  <div class="itemP">
+                    <!-- <label>Prix total</label> -->
+                    <input type="text" id="produit-<?=$idProduit?>-total-disabled" name="produit-<?=$idProduit?>-total-disabled" class="control-panier produit-total" value="<?=$champs['prix']* $champs['nbr']?>€" disabled="disabled">
+                  </div>
+                  <div class="itemP">
+                  <input type="hidden" name="" id="produit-<?=$idProduit?>" value="<?=$idProduit?>">
+                  
+                  <a class="btn" href="index.php?p=panier.delete&idProduit=<?=$idProduit?>">Supprimer</a>
+                  </div>
+            </div>
+          <?php endforeach; ?>
+
+          <div class="itemP">
+              <!-- <label>Total de la commande</label> -->
+              <input type="text" id="commande-total-disabled" name="commande-total-disabled" class="control-panier" value="<?=$prixTotalCommande?>€" disabled="disabled">
+  
+              <input type="hidden" id="commande-total" name="commande-total" class="control-panier" value="<?=$prixTotalCommande?>">
+          </div>
+          
+          <button class="btn">Valider le panier</button>
+          <button class="viderPanier"><a href="index.php?p=panier.deletePanier">supprimer panier</a></button>
+    </form>
+<?php
+  }else{ ?>
+      <p>Pas de panier</p>
+<?php
+  }   ?>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 <h1>Récapitulatif de la commande</h1>
 
 <?php 

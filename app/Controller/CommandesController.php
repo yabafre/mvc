@@ -15,7 +15,7 @@ class CommandesController extends AppController {
     }
 
     function index(){
-
+        
     }
 
     

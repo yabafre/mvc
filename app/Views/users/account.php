@@ -2,24 +2,33 @@
     <p>    <br><br>   Yuser </p>
 </div>
 <section class="mainAccount">
-    <div class="header">
-        <h1>Mon compte</h1>
+      <div class="header">
         <div class="nv">
-        <p >
-        Hello, <?=$users->firstname?>  <?=$users->lastname?> !
-        </p>
-        <a href="../public/index.php?p=users.logout">Déconnexion</a>
+          <a href="../public/index.php?p=users.logout">Déconnexion</a>
         </div>
+        <h1>Hello, <?=$users->firstname?>  <?=$users->lastname?> !</h1>
     </div>
 
   <div class="abox">
       <div class="form-wrap">
-            <div class="dash-user">
-  
+            <div class="dash-user"  id="btn">
+               <button class="btn-user" onclick="filterSelection('action1')">Editer</button>
+               <button class="btn-user" onclick="filterSelection('action2')">Commandes</button>
+               <button class="btn-user" onclick="filterSelection('action3')">Editer</button>
             </div>          
-          <form method="post" autocomplete="off" class="edit-up-form" action="../public/index.php?p=users.inscription">
+          <div class="content action1">
+         
+          </div>
+          <div class="content action2">
+          <?php foreach($commande as $commandes):?>
+            <p><?php var_dump(unserialize($commandes->donnees))?></p>
+
+            <?php endforeach; ?>
+          </div>
+          <div class="content action3">
+          <form method="post" autocomplete="off" class="edit-up-form" action="../public/index.php?p=users.modification">
             <div class="logo2">
-              <h4>Yuser</h4>
+              <h4>Modification</h4>
             </div>
 
             <div class="actuel-form">
@@ -49,7 +58,8 @@
               <input type="submit" value="sauvegarder" class="signA-btn" />
             </div>
           </form>
+          </div>
 
         </div>
       </div>
-</section>
+          </section>

@@ -1,53 +1,107 @@
 <div class="pwallShow">
-    <p>    <br><br>   PANIER </p>
-</div>
-<section class="main6">
-  <?php if(!empty($panier)){ ?>
-    <form action="index.php?p=panier.recapitulatif" method="POST">
-        <?php foreach ($panier as $idProduit => $champs): ?>
-          <div class="itemP">
-          <input type="hidden" id="produit-id-<?=$idProduit?>" name="produit-id-<?=$idProduit?>"  class="form-control" value="<?= $idProduit?>">
-          <input type="hidden" id="produit-<?=$idProduit?>-total" name="produit-<?=$idProduit?>-total" class="form-control" value="<?= $champs['prix']* $champs['nbr']?>">
-              </div>
-              
-              <div class="itemP">
-              <!-- <label>Produit</label> -->
-              <input type="text" placefolder="Produit" id="produit-<?=$idProduit?>-titre-disabled" name="produit-<?=$idProduit?>-titre-disabled" class="form-control" value="<?=$champs['titre']?>" disabled="disabled">
-              </div>
-              
-              <div class="itemP">
-              <!-- <label>Nbr</label> -->
-              <input type="number" id="produit-<?=$idProduit?>-nbr" name="produit-<?=$idProduit?>-nbr" class="form-control produit-nbr" value="<?=$champs['nbr']?>"  data-produit="<?=$idProduit?>" data-prix="<?=$champs['prix']?>">
-              </div>
-              
-              <div class="itemP">
-              <!-- <label>Prix unité</label> -->
-              <input type="text" id="produit-<?=$idProduit?>-unite-disabled" name="produit-<?=$idProduit?>-unite-disabled" class="form-control" value="<?=$champs['prix']?>€" disabled="disabled">
-              </div>
-              <div class="itemP">
-                <!-- <label>Prix total</label> -->
-                <input type="text" id="produit-<?=$idProduit?>-total-disabled" name="produit-<?=$idProduit?>-total-disabled" class="form-control produit-total" value="<?=$champs['prix']* $champs['nbr']?>€" disabled="disabled">
-              </div>
- 
-          <?php endforeach; ?>
-
-          <div class="itemP">
-              <!-- <label>Total de la commande</label> -->
-              <input type="text" id="commande-total-disabled" name="commande-total-disabled" class="form-control" value="<?=$prixTotalCommande?>€" disabled="disabled">
-          </div>
-
-          <div class="itemP">
-              <input type="hidden" id="commande-total" name="commande-total" class="form-control" value="<?=$prixTotalCommande?>">
-          </div>
-          
-          <button class="btn">Valider le panier</button>
-    </form>
-<?php
+<?php if(!empty($panier)){ ?>
+    <p>    <br><br>   PANIER </p><?php
   }else{ ?>
-      <p>Pas de panier</p>
+      <p><br><br>Panier vide</p>
 <?php
   }   ?>
 </div>
+<section class="main6">
+<section>
+    <?php if(!empty($panier)){ ?>
+    <div class="Panier">
+        <div class="ContenuPanier">
+                <form class="form-panier" action="index.php?p=panier.recapitulatif" method="POST">
+                <div class="TableauPanier">
+                    <div class="Colonne">
+                        <div class="TProduits"><p class="CHAKRASemiBold font24">Produits</p></div>
+                        <?php foreach ($panier as $idProduit => $champs): ?>
+                            <!-- foreach start -->
+                            <input type="hidden" id="produit-id-<?=$idProduit?>" name="produit-id-<?=$idProduit?>"  class="control-panier" value="<?= $idProduit?>">
+                            <input type="hidden" id="produit-<?=$idProduit?>-total" name="produit-<?=$idProduit?>-total" class="control-panier" value="<?= $champs['prix']* $champs['nbr']?>">
+                            <div class="Produit">
+                                <div class="ImgProduit">
+                                    <img src="../public/asset/produits/<?=$champs['img1']?>" alt="#">
+                                </div>
+                                <div class="InfoProduit">
+                                    <div class="TitreProduit">
+                                        <p class="CHAKRASemiBold font24">
+                                            <input type="text" placefolder="Produit" id="produit-<?=$idProduit?>-titre-disabled" name="produit-<?=$idProduit?>-titre-disabled" class="control-panier" value="<?=$champs['titre']?>" disabled="disabled">
+                                        </p>
+                                        <p class="CHAKRASemiBold font24">
+                                            <input type="number" id="produit-<?=$idProduit?>-nbr" name="produit-<?=$idProduit?>-nbr" class="control-panier produit-nbr" value="<?=$champs['nbr']?>"  data-produit="<?=$idProduit?>" data-prix="<?=$champs['prix']?>">
+                                        </p>
+                                        <p class="policeCHAKRA font24"><input type="text" id="produit-<?=$idProduit?>-unite-disabled" name="produit-<?=$idProduit?>-unite-disabled" class="control-panier" value="<?=$champs['prix']?>€" disabled="disabled"></p>
+                                    </div>
+                                </div>
+                            </div>
+                            <?php endforeach; ?>
+                            <!-- foreach end -->
+                        </div>
+                        <div class="Colonne">
+                            <div class="TProduits"><p class="CHAKRASemiBold font24">Prix</p></div>
+                            <!-- foreach start -->
+                            <?php foreach ($panier as $idProduit => $champs): ?>
+                                <div class="Produit">
+                                    <div class="InfoProduit">
+                                        <input type="text" id="produit-<?=$idProduit?>-total-disabled" name="produit-<?=$idProduit?>-total-disabled" class="control-panier produit-total" value="<?=$champs['prix']* $champs['nbr']?>€" disabled="disabled">
+                                    </div>
+                                </div>
+                                <?php endforeach; ?>
+                                <!-- foreach end -->
+                            </div>
+                            
+                            <div class="Colonne">
+                                <div class="TProduits"><p class="CHAKRASemiBold font24">Supprimer</p></div>
+                                <?php foreach ($panier as $idProduit => $champs): ?>
+                                <!-- foreach start -->
+                                <div class="Produit">
+                                    <div class="InfoProduit">
+                                        <input type="hidden" name="" id="produit-<?=$idProduit?>" value="<?=$idProduit?>">
+                                        <a href="index.php?p=panier.delete&idProduit=<?=$idProduit?>">
+                                        <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M6.66663 11.6667H33.3333M31.6666 11.6667L30.2216 31.9033C30.1618 32.7443 29.7855 33.5314 29.1685 34.106C28.5515 34.6806 27.7397 35 26.8966 35H13.1033C12.2602 35 11.4484 34.6806 10.8314 34.106C10.2145 33.5314 9.83815 32.7443 9.77829 31.9033L8.33329 11.6667H31.6666ZM16.6666 18.3333V28.3333V18.3333ZM23.3333 18.3333V28.3333V18.3333ZM25 11.6667V6.66667C25 6.22464 24.8244 5.80072 24.5118 5.48816C24.1992 5.17559 23.7753 5 23.3333 5H16.6666C16.2246 5 15.8007 5.17559 15.4881 5.48816C15.1756 5.80072 15 6.22464 15 6.66667V11.6667H25Z" stroke="#112B3D" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                    </svg>
+                                </a>
+                            </div>
+                        </div>
+                        <?php endforeach; ?>
+                        <!-- foreach end -->
+
+                    </div>
+                </div>
+                <div class="Resum">
+                    <div class="Titre"><p class="CHAKRAMedium font32">Résumé du panier</p></div>
+                    <div class="ContenuResume">
+                        <div class="Resumee">
+                            <div class="Objet">
+                                <p class="CHAKRARegular font24">Couleur Rouge</p>
+                                <p class="CHAKRAMedium font24">64,99€</p>
+                            </div>
+                            <div class="Objet">
+                                <p class="CHAKRARegular font24">Frais de Livraison</p>
+                                <p class="CHAKRAMedium font24">4,99€</p>
+                            </div>
+                        </div>
+                        <div class="Total">
+                                <p class="CHAKRASemiBold font24">Total du panier</p>
+                                <p class="CHAKRASemiBold font24"> <input type="text" id="commande-total-disabled" name="commande-total-disabled" class="CHAKRASemiBold font24" value="<?=$prixTotalCommande?>€" disabled="disabled">
+                                <input type="hidden" id="commande-total" name="commande-total" class="CHAKRASemiBold font24" value="<?=$prixTotalCommande?>"></p>
+                        </div>
+                        <div class="Commande"><button>Valider le panier</button></div>
+                        <div class="Commande"><a href="index.php?p=panier.deletePanier" class="CHAKRARegular font20">Vider panier</a></div>
+                    </div>
+                </div>
+            </form>
+            </div>
+        </div>
+        <?php
+  }else{ ?>
+      <p class="noth" >.</p>
+<?php
+  }   ?>
+</div>
+    </section>
 </section>
 
 <script>

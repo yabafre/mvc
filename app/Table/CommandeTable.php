@@ -17,14 +17,24 @@ class CommandeTable extends Table{
             FROM commandes");
     }
 
+
+    public function lastOder(){
+        return $this->query("
+            SELECT commandes.id, commandes.user_id, commandes.date, commandes.prix_total, commandes.donnees
+            FROM commandes
+            ORDER BY commandes.id DESC ");
+            
+    }
+
+
     /**
      * Récupère les dernieres commandes de la category demandée
      * @param $user_id int
      * @return array
      */
-    public function lastByCategory($user_id){
+    public function lastCommande($user_id){
         return $this->query("
-            SELECT commandes.id, commandes.user_id, commandes.prix_total, produits.donnees
+            SELECT commandes.id, commandes.user_id, commandes.prix_total, commandes.donnees
             FROM commandes
             LEFT JOIN users ON commandes.user_id = users.id
             WHERE commandes.user_id = ?

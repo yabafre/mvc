@@ -11,6 +11,8 @@ class UsersController extends AppController {
     public function __construct(){
         parent::__construct();
         $this->loadModel('User');
+        $this->loadModel('Produit');
+        $this->loadModel('Commande');
     }
 
     public function login(){
@@ -42,24 +44,25 @@ class UsersController extends AppController {
     }
 
 
+
      /*
     * fonction d'accès compte utilisateur
     */
 
     public function account(){
-        $this->loadModel('Produit');
-
+       
         $users = $this->User->find($_SESSION['auth']);
+        $commande = $this->Commande->lastCommande($_SESSION['auth']);
         $produits = $this->Produit->all();
         $form = new BootstrapForm($users);
-        $this->render('users.account', compact('form','users','produits'));
+        $this->render('users.account', compact('form','users','produits', 'commande'));
     }
 
     /*
     * fonction de modifier un utilisateur depuis Compte
     */
 
-    public function Modification(){
+    public function modification(){
         $errors = array();
         $success = true;
 
@@ -91,8 +94,9 @@ class UsersController extends AppController {
         }else{
             echo '<p class="font40 coloro">no</p>';
         }
+        $users = $this->User->find($_SESSION['auth']);
         $form = new BootstrapForm($_POST);
-        $this->render('users.account', compact( 'form', 'errors', 'success'));
+        $this->render('users.account', compact( 'form', 'errors', 'success', 'users'));
     }
 
     /*

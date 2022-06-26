@@ -19,6 +19,7 @@ class PanierController extends AppController{
      * Page de rectification des produits 
      */
     public function index(){
+        // $produit = $this->Produit->find($_GET['idProduit']);
 
         $panier =  (!empty($_SESSION['panier']['produit']))? $_SESSION['panier']['produit'] : null ;
         $prixTotalCommande = 0;
@@ -41,6 +42,7 @@ class PanierController extends AppController{
             $_SESSION['panier']['produit'][$_POST['idProduit']]['prix'] = $_POST['prix'];
             $_SESSION['panier']['produit'][$_POST['idProduit']]['nbr'] += $_POST['nbr'];
             $_SESSION['panier']['produit'][$_POST['idProduit']]['titre'] = $_POST['titre'];            
+            $_SESSION['panier']['produit'][$_POST['idProduit']]['img1'] = $_POST['img1'];            
         } 
         header('Location: '.$referer.'');
        
@@ -95,6 +97,30 @@ class PanierController extends AppController{
 
             header('Location: '.$referer.'');
         }
+
+    }
+ /**
+     *  Détruire les produits du panier
+     */
+    public function delete(){
+        $referer = $_SERVER['HTTP_REFERER']; 
+
+        if(!empty($_GET['idProduit'])){
+
+            unset($_SESSION['panier']['produit'][$_GET['idProduit']]);
+
+        } 
+        header('Location: '.$referer.'');
+
+    }
+    public function deletePanier(){
+        $referer = $_SERVER['HTTP_REFERER']; 
+        $panier =  (!empty($_SESSION['panier']['produit']))? $_SESSION['panier']['produit'] : null ;
+        if ($panier){
+
+            unset($_SESSION['panier']);
+        } 
+        header('Location: '.$referer.'');
 
     }
 

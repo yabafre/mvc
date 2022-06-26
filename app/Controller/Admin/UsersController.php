@@ -10,13 +10,15 @@ class UsersController extends AppController{
         parent::__construct();
         $this->loadModel('User');
         $this->loadModel('Produit');
+        $this->loadModel('Commande');
     }
 
     public function index(){
         $users = $this->User->all();
         $produits = $this->Produit->all();
+        $commande = $this->Commande->all();
         $form = new BootstrapForm($_POST);
-        $this->render('admin.users.index', compact('users', 'form','produits'));
+        $this->render('admin.users.index', compact('users', 'form','produits', 'commande'));
     }
 
     public function add(){
@@ -60,7 +62,8 @@ class UsersController extends AppController{
         }
         $form = new BootstrapForm($users);
         $produits = $this->Produit->all();
-        $this->render('admin.users.edit', compact('users', 'form','produits'));
+        $commande = $this->Commande->all();
+        $this->render('admin.users.edit', compact('users', 'form','produits', 'commande'));
     }
 
     public function delete(){

@@ -12,13 +12,15 @@ class CategoriesController extends AppController{
         $this->loadModel('User');
         $this->loadModel('Produit');
         $this->loadModel('Category');
+        $this->loadModel('Commande');
     }
 
     public function index(){
         $users = $this->User->all();
         $produits = $this->Produit->all();
         $items = $this->Category->all();
-        $this->render('admin.categories.index', compact('items','users','produits'));
+        $commande = $this->Commande->all();
+        $this->render('admin.categories.index', compact('items','users','produits','commande'));
     }
 
     public function add(){
@@ -34,8 +36,9 @@ class CategoriesController extends AppController{
         }
         $users = $this->User->all();
         $produits = $this->Produit->all();
+        $commande = $this->Commande->all();
         $form = new BootstrapForm($_POST);
-        $this->render('admin.categories.edit', compact('form','users','produits'));
+        $this->render('admin.categories.edit', compact('form','users','produits', 'commande'));
     }
 
     public function edit(){
@@ -52,8 +55,9 @@ class CategoriesController extends AppController{
         }
         $users = $this->User->all();
         $produits = $this->Produit->all();
+        $commande = $this->Commande->all();
         $form = new BootstrapForm($category);
-        $this->render('admin.categories.edit', compact('form','users','produits'));
+        $this->render('admin.categories.edit', compact('form','users','produits', 'commande'));
     }
 
     public function delete(){

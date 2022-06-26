@@ -24,11 +24,13 @@
     <link rel="stylesheet" href="../public/css/panier.css" />
     <link rel="stylesheet" href="../public/css/recap.css" />
    
-    
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script src="../public/js/script.js" defer></script>
     <script src="../public/js/logScript.js" defer></script>
     <script src="../public/js/produitShow.js" defer></script>
+    <script src="../public/js/account.js" defer></script>
     
 
     <link rel="icon" href="../public/assets/yq.png">
