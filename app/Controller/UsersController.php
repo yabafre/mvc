@@ -31,8 +31,9 @@ class UsersController extends AppController {
                 $errors = true;
             }
         }
+        $search = $this->Produit->all();
         $form = new BootstrapForm($_POST);
-        $this->render('users.login', compact('form', 'errors'));
+        $this->render('users.login', compact('form', 'errors','search'));
     }
 
     /*
@@ -54,8 +55,9 @@ class UsersController extends AppController {
         $users = $this->User->find($_SESSION['auth']);
         $commandes = $this->Commande->lastCommande($_SESSION['auth']);
         $produits = $this->Produit->all();
+        $search = $this->Produit->all();
         $form = new BootstrapForm($users);
-        $this->render('users.account', compact('form','users','produits', 'commandes'));        
+        $this->render('users.account', compact('form','users','produits', 'commandes','search'));        
     }
 
     /*
@@ -95,8 +97,9 @@ class UsersController extends AppController {
             echo '<p class="font40 coloro">no</p>';
         }
         $users = $this->User->find($_SESSION['auth']);
+        $search = $this->Produit->all();
         $form = new BootstrapForm($_POST);
-        $this->render('users.account', compact( 'form', 'errors', 'success', 'users'));
+        $this->render('users.account', compact( 'form', 'errors', 'success', 'users','search'));
     }
 
     /*
@@ -146,8 +149,9 @@ class UsersController extends AppController {
                 }   
             }
         }
+        $search = $this->Produit->all();
         $form = new BootstrapForm($_POST);
-        $this->render('users.inscription ', compact('form', 'errors', 'messageError'));
+        $this->render('users.inscription ', compact('form', 'errors', 'messageError','search'));
     }
 
     /*

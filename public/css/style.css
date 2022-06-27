@@ -49,6 +49,24 @@ button {
   padding-top: 50px;
 }
 
+.searching {
+  position: absolute;
+  scroll-snap-type: mandatory;
+  overflow-y: scroll;
+  top: 76px;
+  left: 30%;
+  border-radius: 2px 2px 12px 12px;
+  background-color: rgba(190, 190, 220, 0.884);
+  box-shadow: 0 5px 20px 0.1px rgba(121, 115, 115, 0.544);
+  backdrop-filter: blur(29px);
+  z-index: 1;
+}
+  #myTable{
+    display: none;
+    grid-template-rows: 1fr;
+      width: 44rem;
+      max-height: 28vw;
+  }
 span {
   font-weight: 600;
 }

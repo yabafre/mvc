@@ -31,8 +31,9 @@ class PanierController extends AppController{
                 $prixTotalCommande += $resultat;
             }
         }
+        $search = $this->Produit->all();
         $form = new BootstrapForm($_POST);
-        $this->render('panier.index', compact('panier', 'prixTotalCommande','form'));
+        $this->render('panier.index', compact('panier', 'prixTotalCommande','form','search'));
     }    
     /**
      * Ajout dans le panier
@@ -72,8 +73,9 @@ class PanierController extends AppController{
             }   
             $produitsAll['commande']['commande-total']=  $produits['commande-total'];
          }
+         $search = $this->Produit->all();
          $form = new BootstrapForm($_POST);
-        $this->render('panier.recapitulatif', compact('produitsAll','form'));
+        $this->render('panier.recapitulatif', compact('produitsAll','form','search'));
     }
 
     /**
@@ -112,8 +114,9 @@ class PanierController extends AppController{
 
             // Détruire session panier
             unset($_SESSION['panier']);
+            $search = $this->Produit->all();
             $form = new BootstrapForm($_POST);
-            $this->render('panier.confirmation', compact('form'));
+            $this->render('panier.confirmation', compact('form','search'));
         }else{
 
             header('Location: '.$referer.'');

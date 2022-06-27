@@ -28,8 +28,9 @@ class ProduitsController extends AppController{
        } 
         $categories = $this->Category->all();
         $last = $this->Produit->last();
+        $search = $this->Produit->all();
         $form = new BootstrapForm($_POST);
-        $this->render('produits.index', compact('produits', 'categories', 'last','form'));
+        $this->render('produits.index', compact('produits', 'categories', 'last','form', 'search'));
     }
     
 
@@ -39,8 +40,9 @@ class ProduitsController extends AppController{
             $this->notFound();
         }
         $produits = $this->Post->lastByCategory($_GET['id']);
+        $search = $this->Produit->all();
         $categories = $this->Category->all();
-        $this->render('posts.category', compact('produits', 'categories', 'categorie'));
+        $this->render('posts.category', compact('produits', 'categories', 'categorie','search'));
     }
 
     public function addEmail(){
@@ -54,14 +56,16 @@ class ProduitsController extends AppController{
             }
         }
         $form = new BootstrapForm($_POST);
-        $this->render('produits.index', compact('form', 'produit', 'categories'));
+        $search = $this->Produit->all();
+        $this->render('produits.index', compact('form', 'produit', 'categories','search'));
     }
 
     public function show(){
         $categories = $this->Category->all();
         $produit = $this->Produit->find($_GET['id']);
+        $search = $this->Produit->all();
         $form = new BootstrapForm($_POST);
-        $this->render('produits.show', compact('produit', 'categories','form'));
+        $this->render('produits.show', compact('produit', 'categories','form','search'));
     }
 
 }

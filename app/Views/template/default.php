@@ -52,8 +52,9 @@
         </div>
         <div class="search">
             <a href="#"><img src="../public/asset/icon/search.svg" alt=""></a>
-            <input type="search" name="" id="search" placeholder="Recherche">
+            <input type="search" id="myInput" id="search" onkeyup="myFunction()" placeholder="Recherche">
         </div>
+
         <div class="nav-list">
                     
                     <div class="account">
@@ -72,9 +73,8 @@
                             <?php } elseif (!empty($_SESSION['user']) && $_SESSION['user']->role=='ROLE_ADMIN'){  ?>
                             <li><a href="../public/index.php?p=users.logout">Deconnexion</a></li>
                             <?php } ?>
-                            <li><a href="../public/index.php?p=users.login">Home</a></li>
-                            <li><a href="#">Product</a></li>
-                            <li><a href="#">Home</a></li>
+                            <li><a href="../public/index.php?p=users.login">Connexion</a></li>
+
 
                         </ul>
                       </div>
@@ -86,6 +86,21 @@
         </div>
         </div>
       </nav>
+      <div class="searching">
+            <table id="myTable" class="myTable">
+              <tr>
+                <th>&emsp; &emsp;&emsp;&emsp;</th>
+                <th>&emsp; &emsp;&emsp;&emsp;</th>
+              </tr>
+              <?php foreach($search as $produit){ ?>
+                <tbody>
+                  <tr>
+                    <td><a href="index.php?p=produits.show&id=<?= $produit->id?>"><?=$produit->titre?>&emsp;<img src="../public/asset/produits/<?= $produit->img1; ?>" alt="produit" style='width:40%;'></a></td>
+                  </tr>
+                </tbody>
+                <?php }?>
+              </table>
+            </div>
 </header>
 
 

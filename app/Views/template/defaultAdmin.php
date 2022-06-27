@@ -72,9 +72,12 @@
             <div class="toggle">
             <ion-icon name="menu-outline"></ion-icon>
             </div>
+            <div class="titre">
+                <h1 style=" color:red;">Admin</h1>
+            </div>   
             <!-- userimg -->
             <div class="user">
-                <img src="../public/asset/img/user.jpg" alt="user">
+                <img src="../public/asset/img/use.png" alt="user">
             </div>    
         </div>
         <!-- cards -->

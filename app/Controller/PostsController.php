@@ -9,15 +9,26 @@ class PostsController extends AppController{
 
     public function __construct(){
         parent::__construct();
-        $this->loadModel('Post');
+        $this->loadModel('Produit');
         $this->loadModel('Category');
+        $this->loadModel('Newsletter');
 
     }
 
     public function index(){
-        $posts = $this->Post->last();
+        $produits = "";
+       if (isset($_GET["categorie"])){
+        $categorie = $this->Category->find($_GET['categorie']);
+        if($categorie === false){
+            $this->notFound();
+        }
+            $produits = $this->Produit->lastByCategory($_GET["categorie"]);
+            
+       } 
         $categories = $this->Category->all();
-        $this->render('posts.index', compact('posts', 'categories'));
+        $last = $this->Produit->last();
+        $form = new BootstrapForm($_POST);
+        $this->render('produits.index', compact('produits', 'categories', 'last','form'));
     }
 
     public function erreur(){
