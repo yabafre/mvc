@@ -52,10 +52,10 @@ class UsersController extends AppController {
     public function account(){
        
         $users = $this->User->find($_SESSION['auth']);
-        $commande = $this->Commande->lastCommande($_SESSION['auth']);
+        $commandes = $this->Commande->lastCommande($_SESSION['auth']);
         $produits = $this->Produit->all();
         $form = new BootstrapForm($users);
-        $this->render('users.account', compact('form','users','produits', 'commande'));
+        $this->render('users.account', compact('form','users','produits', 'commandes'));        
     }
 
     /*

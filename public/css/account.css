@@ -78,11 +78,19 @@
   grid-column-gap: 40px;
 }
 
+.mainAccount .content td {
+  width: 20%;
+}
+
+.mainAccount .content.action3.show {
+  width: 300px;
+  bottom: 76px;
+  right: 116px;
+}
+
 .mainAccount .show {
   display: block;
-  max-width: 600px;
-  left: 30px;
-  bottom: 60px;
+  left: 84px;
   position: relative;
 }
 

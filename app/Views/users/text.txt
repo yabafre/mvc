@@ -5,3 +5,52 @@
         <?= $form->input('email', 'Email', ['type' => 'email'],  isset($errors["emailError"]) ? $errors["emailError"] : ""); ?>
         <button class="btn">Sauver les modifications</button>
     </form> -->
+
+
+
+
+
+
+
+
+            <?php foreach($commandes as $commande): ?>
+            <div>
+            <div class="commande-ligne">
+                <p><?= $commande->prix_total?> €</p>
+                <p><?= date('d/m/Y', strtotime($commande->date)) ?></p>
+            <div class="tableau-commande-details">
+              <div>
+                  <div class="quantite-panier">
+                  </div>
+                    <p>Produits</p>
+                    <p>Prix unitaire</p>
+                    <p>Quantité</p>
+                    <p>Total</p>
+                    <p>Détails</p>
+                </div>
+        <?php  $donnees = unserialize($commande->donnees);
+                foreach($donnees as $donnee): ?>
+                <div class="row-produit">
+                    <div class="produit-panier">
+                    <a href="index.php?p=produits.show&id=<?= $donnee['produit-id'] ?>"> <img src='../public/asset/produits/<?= $donnee["produit-img1"]?>' alt="#" style="width:15%;"></a>
+                        <div class="text-panier">
+                            <h2><?= $donnee["produit-titre"] ?></h2>
+                        </div>
+                    </div>
+                    <div class="quantite-panier">
+                        <p><?= $donnee["produit-adresse"] ?></p>
+                    </div>
+                    <div class="quantite-panier">
+                        <p><?= $donnee["produit-nbr"] ?></p>
+                    </div>
+                    <div class="total-panier">
+                        <p><?= $donnee["produit-total"] ?></p>
+                    </div>
+                    <div class="details">
+                        <a href="index.php?p=produits.show&id=<?= $donnee['produit-id'] ?>">Voir plus</a>
+                    </div>
+                </div>
+            <?php endforeach; ?>
+            </div> 
+            </div>
+        <?php endforeach; ?>

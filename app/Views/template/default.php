@@ -57,7 +57,7 @@
         <div class="nav-list">
                     
                     <div class="account">
-                        <?php if(!empty($_SESSION) && $_SESSION['user']->role=='ROLE_ADMIN'){ ?>
+                        <?php if(!empty($_SESSION['user']) && $_SESSION['user']->role=='ROLE_ADMIN'){ ?>
                           <button class="roleAdmin"><a  href="?p=admin.posts.index">admin <ion-icon name="build-outline"></ion-icon></a></button>
                         <?php } else {?>
                           <button class="connexion"><a href="../public/index.php?p=users.login"><img src="../public/asset/icon/account.png" alt="User"></a></button>
@@ -66,10 +66,10 @@
                     <div class="main-navlinks">
                       <div class="nav-link">
                         <ul>
-                            <?php if(!empty($_SESSION) && $_SESSION['user']->role=='ROLE_USER'){ ?>
+                            <?php if(!empty($_SESSION['user']) && $_SESSION['user']->role=='ROLE_USER'){ ?>
                             <li><a href="../public/index.php?p=users.account">Compte</a></li>
                             <li><a href="../public/index.php?p=users.logout">Deconnexion</a></li>
-                            <?php } elseif (!empty($_SESSION) && $_SESSION['user']->role=='ROLE_ADMIN'){  ?>
+                            <?php } elseif (!empty($_SESSION['user']) && $_SESSION['user']->role=='ROLE_ADMIN'){  ?>
                             <li><a href="../public/index.php?p=users.logout">Deconnexion</a></li>
                             <?php } ?>
                             <li><a href="../public/index.php?p=users.login">Home</a></li>
@@ -164,8 +164,12 @@
               <p><span>Inscrivez vous à la newsletter :</span> Une suprise vous attend 😲</p>
               <p class="e-mail">Votre adresse e-mail</p>
               <div class="mail">
-                <div class="enterMail"><input type="mail" name="mail" id="mail"></div>
+                <div class="enterMail">
+                <form method="post" action="../public/index.php?p=produits.addEmail" autocomplete="off">
+                  <?= $form->input('email', '', ['type' => 'email']); ?>
+                </div>
                 <button type="submit"><span>Envoyez</span></button>
+              </form>
               </div>
             </div>
           </div>

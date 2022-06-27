@@ -3,7 +3,7 @@
 ::after {
   box-sizing: border-box;
   margin: 0;
-  padding: 0;
+  padding: 50px;
   font-family: "Montserrat", Arial, Helvetica, sans-serif;
 }
 
@@ -37,10 +37,10 @@ button {
   cursor: pointer;
 }
 
-.wallErreur{
+.wallErreur {
   height: 100vh;
   width: 100%;
-  background-color: #0F5E54;
+  background-color: #0f5e54;
   background-size: cover;
 }
 
@@ -75,12 +75,15 @@ nav {
   padding: 5px;
 }
 
-.roleAdmin, .connexion, .panier{
+.roleAdmin,
+.connexion,
+.panier {
   margin-right: 15px;
   padding-left: 10px;
   border-right: 5px solid black;
 }
-.connexion img, .panier img{
+.connexion img,
+.panier img {
   width: 75%;
 }
 .roleAdmin a {
@@ -146,7 +149,7 @@ nav {
 }
 .nav-link ul li {
   list-style: none;
-  padding: 10px 38px ;
+  padding: 10px 38px;
   text-align: start;
   text-decoration: none;
 }
@@ -154,14 +157,14 @@ nav {
   text-decoration: none;
   color: #0c0c0d;
 }
-.nav-link ul li:hover a{
+.nav-link ul li:hover a {
   color: white;
 }
 .nav-link ul li:hover {
   background-color: #0c0c0d;
   border-radius: 21px;
 }
-.main-navlinks{
+.main-navlinks {
   display: none;
   top: 95px;
   position: absolute;
@@ -174,8 +177,8 @@ nav {
 .main-navlinks.eneable {
   display: block;
   margin-right: 2%;
+  z-index: 1;
 }
-
 
 .secu {
   display: flex;
@@ -292,7 +295,10 @@ footer {
   text-align: center;
   padding-top: 2px;
 }
-.enterMail input {
+.enterMail .form-control {
+  position: initial;
+}
+.enterMail form input {
   width: 95%;
   height: 95%;
   font-size: large;

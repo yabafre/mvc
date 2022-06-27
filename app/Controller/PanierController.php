@@ -3,6 +3,7 @@
 namespace App\Controller;
 
 use Core\Controller\Controller;
+use Core\HTML\BootstrapForm;
 use \App;
 
 class PanierController extends AppController{
@@ -30,7 +31,8 @@ class PanierController extends AppController{
                 $prixTotalCommande += $resultat;
             }
         }
-        $this->render('panier.index', compact('panier', 'prixTotalCommande'));
+        $form = new BootstrapForm($_POST);
+        $this->render('panier.index', compact('panier', 'prixTotalCommande','form'));
     }    
     /**
      * Ajout dans le panier
@@ -64,12 +66,14 @@ class PanierController extends AppController{
                 $produitsAll['produit'][$produitSelect->id]['produit-id'] = $produits['produit-id-'.$produit];
                 $produitsAll['produit'][$produitSelect->id]['produit-nbr'] = $produits['produit-'.$produit.'-nbr'];
                 $produitsAll['produit'][$produitSelect->id]['produit-total'] = $produits['produit-'.$produit.'-total'];
+                $produitsAll['produit'][$produitSelect->id]['produit-img1'] = $produits['produit-'.$produit.'-img1'];
                 $produitsAll['produit'][$produitSelect->id]['produit'] = $produitSelect;
 
             }   
             $produitsAll['commande']['commande-total']=  $produits['commande-total'];
          }
-        $this->render('panier.recapitulatif', compact('produitsAll'));
+         $form = new BootstrapForm($_POST);
+        $this->render('panier.recapitulatif', compact('produitsAll','form'));
     }
 
     /**
@@ -80,19 +84,36 @@ class PanierController extends AppController{
         $referer = $_SERVER['HTTP_REFERER']; 
 
         if(!empty($_POST['user_id'])){
+            $produits = $_POST;
+            $produitsAll = array();
 
-            $donnees = serialize($_POST);
+            foreach($produits as $key => $produit){
+                $produitSelect = '';
+                if(!empty($produits['produit-id-'.$produit])){
+
+                    $produitSelect = $this->Produit->findWithCategory($produit);
+                    $produitsAll[$produitSelect->id]['produit-id'] = $produits['produit-id-'.$produit];
+                    $produitsAll[$produitSelect->id]['produit-titre'] = $produits['produit-titre-'.$produit];
+                    $produitsAll[$produitSelect->id]['produit-nbr'] = $produits['produit-nbr-'.$produit];
+                    $produitsAll[$produitSelect->id]['produit-total'] = $produits['produit-total-'.$produit];
+                    $produitsAll[$produitSelect->id]['produit-adresse'] = $produits['produit-adresse-'.$produit];
+                    $produitsAll[$produitSelect->id]['produit-img1'] = $produits['produit-img1-'.$produit];
+
+
+                }   
+            }
 
             $result = $this->Commande->create([
                 'user_id' => $_POST['user_id'],
-                'donnees' => $donnees,
+                'donnees' => serialize($produitsAll),
                 'prix_total' => $_POST['commande-total'],
+                'date' => date("Y-m-d"),
             ]);
 
             // Détruire session panier
             unset($_SESSION['panier']);
-
-            $this->render('panier.confirmation');
+            $form = new BootstrapForm($_POST);
+            $this->render('panier.confirmation', compact('form'));
         }else{
 
             header('Location: '.$referer.'');

@@ -50,6 +50,12 @@
                     </a>
                 </li>
                 <li>
+                    <a href="../public/index.php">
+                        <span class="icon"><ion-icon name="desktop-outline"></ion-icon></span>
+                        <span class="title">Site</span>
+                    </a>
+                </li>
+                <li>
                     <a href="../public/index.php?p=users.logout">
                         <span class="icon"><ion-icon name="log-out-outline"></ion-icon></span>
                         <span class="title">Deconnexion</span>
@@ -57,7 +63,7 @@
                 </li>
             </ul>
         </div>
-    </div>
+    </div>\mvc\public\index.php
 
     <!-- main -->
 

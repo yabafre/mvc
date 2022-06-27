@@ -65,13 +65,19 @@
       grid-template-columns: repeat(6, 1fr);
       grid-column-gap: 40px;
     }
+    td{
+      width: 20%;
+    }
+  }
+  .content.action3.show{
+    width: 300px;
+    bottom: 76px;
+    right: 116px;
   }
 
   .show {
     display: block;
-    max-width: 600px;
-    left: 30px;
-    bottom: 60px;
+    left: 84px;
     position: relative;
   }
   .form-wrap {

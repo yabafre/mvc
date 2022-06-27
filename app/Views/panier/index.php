@@ -19,6 +19,7 @@
                             <!-- foreach start -->
                             <input type="hidden" id="produit-id-<?=$idProduit?>" name="produit-id-<?=$idProduit?>"  class="control-panier" value="<?= $idProduit?>">
                             <input type="hidden" id="produit-<?=$idProduit?>-total" name="produit-<?=$idProduit?>-total" class="control-panier" value="<?= $champs['prix']* $champs['nbr']?>">
+                            <input type="hidden" name="produit-<?=$idProduit?>-img1" id="produit-img1-<?=$idProduit?>" class="form-control" value="<?=$champs['img1']?>">
                             <div class="Produit">
                                 <div class="ImgProduit">
                                     <img src="../public/asset/produits/<?=$champs['img1']?>" alt="#">
@@ -75,10 +76,6 @@
                     <div class="ContenuResume">
                         <div class="Resumee">
                             <div class="Objet">
-                                <p class="CHAKRARegular font24">Couleur Rouge</p>
-                                <p class="CHAKRAMedium font24">64,99€</p>
-                            </div>
-                            <div class="Objet">
                                 <p class="CHAKRARegular font24">Frais de Livraison</p>
                                 <p class="CHAKRAMedium font24">4,99€</p>
                             </div>
@@ -88,8 +85,8 @@
                                 <p class="CHAKRASemiBold font24"> <input type="text" id="commande-total-disabled" name="commande-total-disabled" class="CHAKRASemiBold font24" value="<?=$prixTotalCommande?>€" disabled="disabled">
                                 <input type="hidden" id="commande-total" name="commande-total" class="CHAKRASemiBold font24" value="<?=$prixTotalCommande?>"></p>
                         </div>
-                        <div class="Commande"><button>Valider le panier</button></div>
-                        <div class="Commande"><a href="index.php?p=panier.deletePanier" class="CHAKRARegular font20">Vider panier</a></div>
+                        <button class="commande">Valider le panier</button>
+                        <div class="vider"><a href="index.php?p=panier.deletePanier" class="CHAKRARegular font20">Vider panier</a></div>
                     </div>
                 </div>
             </form>
@@ -125,7 +122,7 @@
       var prixUnite = document.getElementById('produit-'+produit+'-total');
       var prixUniteDisabled = document.getElementById('produit-'+produit+'-total-disabled');
 
-      var resulatPrixtotal = prix*valeur;
+      var resulatPrixtotal = prix*valeur+4.99;
 
       prixUniteDisabled.setAttribute('value', resulatPrixtotal+"€")
       prixUnite.setAttribute('value', resulatPrixtotal)
