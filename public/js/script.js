@@ -59,7 +59,14 @@ function myFunction() {
   }
 }
 
-// const search = document.querySelector("myTable");
+const search = document.querySelector(".searching");
+const inputSearch = document.querySelector('.search');
+
+inputSearch.addEventListener('click', () => {
+  search.classList.toggle('active');
+});
+
+
 
 // myInput.oniput = function () {
 //   search.style.display = "block";

@@ -12,7 +12,7 @@
   <div class="abox">
       <div class="form-wrap">
                 <div class="dash-user"  id="btn">
-                  <button class="btn-user" onclick="filterSelection('action1')">Editer</button>
+                  <button class="btn-user" onclick="filterSelection('action1')">Acceuil</button>
                   <button class="btn-user" onclick="filterSelection('action2')">Commandes</button>
                   <button class="btn-user" onclick="filterSelection('action3')">Editer</button>
                 </div>          

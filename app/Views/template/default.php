@@ -73,8 +73,6 @@
                             <?php } elseif (!empty($_SESSION['user']) && $_SESSION['user']->role=='ROLE_ADMIN'){  ?>
                             <li><a href="../public/index.php?p=users.logout">Deconnexion</a></li>
                             <?php } ?>
-                            <li><a href="../public/index.php?p=users.login">Connexion</a></li>
-
 
                         </ul>
                       </div>
@@ -189,10 +187,10 @@
             </div>
           </div>
         <div class="mention">
-          <a href="#">Mentions légales</a>
-          <a href="#">Charte de confidentialité</a>
+          <a href="../public/src/Mentions légales et politique de confidentialité.pdf">Mentions légales</a>
+          <a href="../public/src/Mentions légales et politique de confidentialité.pdf">Charte de confidentialité</a>
           <a href="#">FAQ</a>
-          <a href="#">CGV</a>
+          <a href="../public/src/CGV _ produits en ligne pour les particuliers.pdf">CGV</a>
         </div>
         <div class="copiryth">
           <img src="../public/asset/icon/Frame 368.svg" alt="#">
